@@ -115,43 +115,39 @@ h2 {
   margin: 4px;
 }
 
-.btn-ghost {
-  text-decoration: none;
-  padding: 8px 12px;
-  background-color: transparent;
-  color: inherit;
-  border: 1px solid #333333;
-  border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-
-  transition:
-    background-color 0.2s,
-    color 0.2s;
-}
-
-.btn-ghost:hover {
-  background-color: #333333;
-  color: #ffffff;
-}
-
+/* Base btn Style */
 .btn {
+  display: inline-block;
   text-decoration: none;
+  line-height: normal;
   padding: 8px 12px;
-  background-color: #333333;
-  color: #ffffff;
-
-  border: 1px solid #333333;
   border-radius: 6px;
+  border: 1px solid #333333;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-
   transition:
     background-color 0.2s,
     color 0.2s;
+  cursor: pointer;
+
+  /* Default Solid State */
+  background-color: #333333;
+  color: #ffffff;
 }
 
 .btn:hover {
   background-color: transparent;
   color: inherit;
+}
+
+/* Modifier: Ghost */
+.btn-ghost {
+  background-color: transparent;
+  color: inherit;
+}
+
+.btn-ghost:hover {
+  background-color: #333333;
+  color: #ffffff;
 }
 
 section {
