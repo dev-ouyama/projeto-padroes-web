@@ -23,6 +23,7 @@ function loadQuestion() {
 
   q.answers.forEach((answer, index) => {
     const btn = document.createElement("button");
+    btn.classList.add("answer-btn");
     btn.textContent = answer;
     btn.onclick = () => selectAnswer(index);
     answersEl.appendChild(btn);
