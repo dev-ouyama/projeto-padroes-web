@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./quiz.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="back-button" href="../../index.html" aria-label="Voltar">
+          <svg
+            class="button-image"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="black"
+            stroke-width="3"
+            aria-hidden="true"
+          >
+            <path d="M15 22l-10-10 10-10" />
+          </svg>
+        </a>
+      </nav>
+    </header>
+    <section class="content">
+      <div id="quiz-container">
+        <h2 id="question">Pergunta aqui</h2>
+        <div class="horizontal-box">
+          <div class="vertical-box">
+            <div id="answers"></div>
+            <button id="next-btn">Próxima</button>
+          </div>
+          <img
+            src="https://dropcultura.com.br/wp-content/uploads/2021/09/homem-aranha-2002.jpg"
+            alt="Homem-Aranha"
+            class="frame"
+          />
+        </div>
+      </div>
+
+      <div id="result-container" style="display: none">
+        <h2>Resultado</h2>
+        <p id="score"></p>
+        <button onclick="restartQuiz()">Reiniciar</button>
+      </div>
+    </section>
+
+    <script src="quiz.js"></script>
+  </body>
+</html>
