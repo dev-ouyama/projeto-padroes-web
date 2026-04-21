@@ -2,7 +2,7 @@ const questions = [
   {
     question: "Qual filme é esse?",
     answers: ["Spider-Man", "Tropa de Elite", "Minha Mãe é uma Peça", "Shrek"],
-    correct: 1,
+    correct: 0,
   },
 ];
 

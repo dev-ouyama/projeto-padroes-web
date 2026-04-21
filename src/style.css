@@ -85,7 +85,7 @@ h6 {
   --text-accent: #9f1239;
   --bg-default: #ffffff;
   --bg-secondary: #f2f2f7;
-  --bg-button: #FFF0DE;
+  --bg-button: #fff0de;
 }
 
 a {
@@ -265,7 +265,7 @@ section {
 }
 
 .back-button:hover {
-  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
-  transform: translateX(-5px) scale(1.05);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.06));
+  transform: scale(1.05);
   transition: 0.2s ease;
 }
