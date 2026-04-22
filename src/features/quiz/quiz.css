@@ -1,6 +1,10 @@
 .frame {
   width: 700px;
   max-height: 500px;
+  border-radius: 15px;
+  -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0);
+  background: #1C6EA4;
 }
 
 html,
@@ -37,6 +41,9 @@ section .content {
 
 .slide {
   transition: transform 0.4s ease, opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 /* Saindo pra esquerda */
@@ -60,6 +67,7 @@ section .content {
 .horizontal-box {
   display: flex;
   gap: 1rem;
+  padding: 1rem;
 }
 
 .vertical-box {
@@ -115,4 +123,9 @@ section .content {
 
 .answer-option span:active {
   transform: scale(0.98);
+}
+
+/*Popup*/
+.modal {
+  display: none;
 }

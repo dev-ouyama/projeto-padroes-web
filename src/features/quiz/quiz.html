@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="./quiz.css" />
   </head>
   <body>
+    <div id="popup" class="modal">
+      <h1>Você realmente quer voltar?</h1>
+      <p>O seu progresso será perdido</p>
+      <button><a href="../../index.html">Confirmar</a></button>
+      <button onclick="closePopup()">Cancelar</button>
+    </div>
     <header>
       <nav>
-        <a class="back-button" href="../../index.html" aria-label="Voltar">
+        <a class="back-button" onclick="showPopup()" aria-label="Voltar">
           <svg
             class="button-image"
             viewBox="0 0 24 24"

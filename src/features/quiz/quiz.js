@@ -83,6 +83,17 @@ function loadQuestion() {
   });
 }
 
+// Função para mostrar o popup de confirmação ao voltar das pergunta do Quiz
+function showPopup() {
+  const modal = document.getElementById("popup");
+  modal.classList.remove("modal")
+}
+
+function closePopup(){
+  const modal = document.getElementById("popup");
+  modal.classList.add("modal");
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
