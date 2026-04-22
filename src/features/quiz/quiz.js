@@ -1,8 +1,22 @@
 const questions = [
   {
     question: "Qual filme é esse?",
+    image:
+      "/assets/imgs/homem-aranha.jpg",
     answers: ["Spider-Man", "Tropa de Elite", "Minha Mãe é uma Peça", "Shrek"],
     correct: 0,
+  },
+  {
+    question: "Qual filme é esse?",
+    image:
+      "/assets/imgs/tropa-de-elite.jpg",
+    answers: [
+      "Velozes e Furiosos",
+      "Tropa de Elite",
+      "Cidade de Deus",
+      "Matrix",
+    ],
+    correct: 1,
   },
 ];
 
@@ -11,55 +25,95 @@ let score = 0;
 
 const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
+const form = document.getElementById("quiz-form");
 const nextBtn = document.getElementById("next-btn");
 const resultContainer = document.getElementById("result-container");
 const scoreEl = document.getElementById("score");
+const imageEl = document.getElementById("quiz-image");
+const slideEl = document.getElementById("slide");
+
+function animateNextQuestion(callback) {
+  // Sai a pergunta velha
+  slideEl.classList.remove("slide-active");
+  slideEl.classList.add("slide-out");
+
+  setTimeout(() => {
+    callback(); // troca conteúdo
+
+    // Prepara entrada da proxima questão
+    slideEl.classList.remove("slide-out");
+    slideEl.classList.add("slide-in");
+
+    setTimeout(() => {
+      slideEl.classList.remove("slide-in");
+      slideEl.classList.add("slide-active");
+    }, 50);
+  }, 400);
+}
 
 function loadQuestion() {
   answersEl.innerHTML = "";
+  nextBtn.disabled = true;
+
   const q = questions[currentQuestion];
 
   questionEl.textContent = q.question;
 
+  imageEl.src = q.image;
+
   q.answers.forEach((answer, index) => {
-    const btn = document.createElement("button");
-    btn.classList.add("answer-btn");
-    btn.textContent = answer;
-    btn.onclick = () => selectAnswer(index);
-    answersEl.appendChild(btn);
+    const label = document.createElement("label");
+    label.classList.add("answer-option");
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "answer";
+    input.value = index;
+
+    input.addEventListener("change", () => {
+      nextBtn.disabled = false;
+    });
+
+    const span = document.createElement("span");
+    span.textContent = answer;
+
+    label.appendChild(input);
+    label.appendChild(span);
+    answersEl.appendChild(label);
   });
 }
 
-function selectAnswer(index) {
-  // Se acertar a resposta aumenta o score
-  if (index === questions[currentQuestion].correct) {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const selected = document.querySelector('input[name="answer"]:checked');
+
+  if (!selected) return;
+
+  const answerIndex = Number(selected.value);
+
+  if (answerIndex === questions[currentQuestion].correct) {
     score++;
   }
 
-  // Permite ir pra próxima pergunta
-  nextBtn.disabled = false;
-}
+  animateNextQuestion(() => {
+    currentQuestion++;
 
-nextBtn.addEventListener("click", () => {
-  currentQuestion++;
-
-  if (currentQuestion < questions.length) {
-    loadQuestion();
-    nextBtn.disabled = true;
-  } else {
-    showResult();
-  }
+    if (currentQuestion < questions.length) {
+      loadQuestion();
+    } else {
+      showResult();
+    }
+  });
 });
 
 function showResult() {
-  // Mostra resultado final de pontuação
   document.getElementById("quiz-container").style.display = "none";
   resultContainer.style.display = "block";
   scoreEl.textContent = `Você acertou ${score} de ${questions.length}`;
 }
 
 function restartQuiz() {
-  // Reinicia as variáveis e troca da tela de resultados para a tela de quiz
   currentQuestion = 0;
   score = 0;
   resultContainer.style.display = "none";
@@ -67,5 +121,6 @@ function restartQuiz() {
   loadQuestion();
 }
 
-nextBtn.disabled = true;
+slideEl.classList.add("slide-active");
+
 loadQuestion();

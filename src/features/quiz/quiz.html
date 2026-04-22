@@ -25,17 +25,22 @@
     </header>
     <section class="content">
       <div id="quiz-container">
-        <h2 id="question">Pergunta aqui</h2>
-        <div class="horizontal-box">
-          <div class="vertical-box">
-            <div id="answers"></div>
-            <button id="next-btn">Próxima</button>
+        <div id="slide" class="slide">
+          <h2 id="question">Pergunta aqui</h2>
+
+          <div class="horizontal-box">
+            <form id="quiz-form" class="vertical-box">
+              <div id="answers"></div>
+              <button type="submit" id="next-btn" disabled>Próxima</button>
+            </form>
+
+            <img
+              id="quiz-image"
+              src=""
+              alt="Imagem da pergunta"
+              class="frame"
+            />
           </div>
-          <img
-            src="https://dropcultura.com.br/wp-content/uploads/2021/09/homem-aranha-2002.jpg"
-            alt="Homem-Aranha"
-            class="frame"
-          />
         </div>
       </div>
 
