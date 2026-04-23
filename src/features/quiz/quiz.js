@@ -140,6 +140,8 @@ function restartQuiz() {
   // resetar respostas do usuário
   userAnswers = new Array(questions.length).fill(null);
 
+  shuffleArray(questions);
+
   resultContainer.style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
 
@@ -184,6 +186,33 @@ function goToQuestion(index) {
 }
 
 slideEl.classList.add("slide-active");
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
+
+function shuffleQuestionsAndAnswers(questions) {
+  questions.forEach((q) => {
+    /** guarda a resposta correta antes de embaralhar
+        embaralha as respostas
+        e atualiza o índice da resposta correta 
+     ****************************************/
+    
+    const correctAnswer = q.answers[q.correct];
+    shuffleArray(q.answers);
+    q.correct = q.answers.indexOf(correctAnswer);
+  });
+
+  // embaralha a ordem das perguntas
+  shuffleArray(questions);
+}
+
+shuffleQuestionsAndAnswers(questions);
 
 loadQuestion();
 renderNavigator();
