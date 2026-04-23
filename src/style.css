@@ -72,6 +72,8 @@ h6 {
 }
 /* END PREFLIGHT */
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 :root {
   /* Typography */
   --ff-heading: "Space Grotesk", sans-serif;
@@ -154,7 +156,7 @@ h2 {
 
 section {
   position: relative; /* For the absolute pos. link to stay inside */
-  height: 100vh;
+  min-height: 100vh;
   background: var(--bg-secondary);
   display: flex;
   flex-direction: column;
@@ -175,15 +177,22 @@ section {
   justify-content: space-between;
   align-items: flex-start;
   text-align: left;
+  /*Divisão diagonal entre sections*/
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 }
 
 #hero h1 {
-  font-size: 4.5rem;
-  width: 60%;
+  /*Tamanho adaptável pro h1. Adapta melhor ao mobile ao ter valor min e valor max.*/
+  font-size: clamp(1.8rem, 5vw, 4.5rem);
 }
 
 #hero h1 span {
   color: var(--text-accent);
+}
+
+#hero p {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-family: var(--ff-heading);
 }
 
 #articles {
@@ -208,8 +217,8 @@ section {
 
 .cards-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 35%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  width: clamp(280px, 70%, 600px);
   gap: 1rem;
 }
 
@@ -240,8 +249,13 @@ section {
 
 #quiz-cta {
   background: var(--bg-secondary);
-
   gap: 1rem;
+  /*Divisão diagonal entre sections*/
+  clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 100%);
+}
+
+#quiz-cta h2 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
 }
 
 .back-button {
