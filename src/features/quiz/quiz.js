@@ -92,13 +92,21 @@ function loadQuestion() {
 // Função para mostrar o popup de confirmação ao voltar das pergunta do Quiz
 function showPopup() {
   const modal = document.getElementById("popup");
-  modal.classList.remove("invisible")
+  const overlay = document.querySelector(".modal-overlay");
+
+  modal.classList.remove("invisible");
+  overlay.classList.add("active");
 }
 
-function closePopup(){
+function closePopup() {
   const modal = document.getElementById("popup");
+  const overlay = document.querySelector(".modal-overlay");
+
   modal.classList.add("invisible");
+  overlay.classList.remove("active");
 }
+
+document.querySelector(".modal-overlay").addEventListener("click", closePopup);
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -202,7 +210,7 @@ function shuffleQuestionsAndAnswers(questions) {
         embaralha as respostas
         e atualiza o índice da resposta correta 
      ****************************************/
-    
+
     const correctAnswer = q.answers[q.correct];
     shuffleArray(q.answers);
     q.correct = q.answers.indexOf(correctAnswer);

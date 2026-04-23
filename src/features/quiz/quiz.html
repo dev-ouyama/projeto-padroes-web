@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="../../style.css" />
     <link rel="stylesheet" href="./quiz.css" />
   </head>
-  <div id="popup" class="modal invisible">
   <body>
+    <div class="modal-overlay"></div>
+    <div id="popup" class="modal invisible">
       <h1>Você realmente quer voltar?</h1>
       <p>O seu progresso será perdido</p>
       <div class="to-left">
-        <button class="btn-confirm"><a href="../../index.html">Confirmar</a></button>
+        <a class="btn-confirm" href="../../index.html">Confirmar</a>
         <button class="btn-cancel" onclick="closePopup()">Cancelar</button>
       </div>
     </div>
@@ -37,18 +38,18 @@
         <div id="slide" class="slide">
           <h2 id="question">Pergunta aqui</h2>
 
-          <div class="horizontal-box">
-            <form id="quiz-form" class="vertical-box">
-              <div id="answers"></div>
-              <button type="submit" id="next-btn" disabled>Próxima</button>
-            </form>
-
+          <div class="quiz-box">
             <img
               id="quiz-image"
               src=""
               alt="Imagem da pergunta"
               class="frame"
             />
+
+            <form id="quiz-form" class="vertical-box">
+              <div id="answers"></div>
+              <button type="submit" id="next-btn" disabled>Próxima</button>
+            </form>
           </div>
         </div>
       </div>
