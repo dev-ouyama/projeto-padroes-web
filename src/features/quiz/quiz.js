@@ -86,12 +86,12 @@ function loadQuestion() {
 // Função para mostrar o popup de confirmação ao voltar das pergunta do Quiz
 function showPopup() {
   const modal = document.getElementById("popup");
-  modal.classList.remove("modal")
+  modal.classList.remove("invisible")
 }
 
 function closePopup(){
   const modal = document.getElementById("popup");
-  modal.classList.add("modal");
+  modal.classList.add("invisible");
 }
 
 form.addEventListener("submit", (e) => {
