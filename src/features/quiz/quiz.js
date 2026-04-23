@@ -81,6 +81,12 @@ function loadQuestion() {
     label.appendChild(span);
     answersEl.appendChild(label);
   });
+  
+  if (userAnswers[currentQuestion] !== null) {
+    const radios = document.querySelectorAll('input[name="answer"]');
+    radios[userAnswers[currentQuestion]].checked = true;
+    nextBtn.disabled = false;
+  }
 }
 
 // Função para mostrar o popup de confirmação ao voltar das pergunta do Quiz
@@ -98,10 +104,11 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const selected = document.querySelector('input[name="answer"]:checked');
-
   if (!selected) return;
 
   const answerIndex = Number(selected.value);
+
+  userAnswers[currentQuestion] = answerIndex;
 
   if (answerIndex === questions[currentQuestion].correct) {
     score++;
@@ -112,7 +119,9 @@ form.addEventListener("submit", (e) => {
 
     if (currentQuestion < questions.length) {
       loadQuestion();
+      renderNavigator();
     } else {
+      renderNavigator();
       showResult();
     }
   });
@@ -127,11 +136,54 @@ function showResult() {
 function restartQuiz() {
   currentQuestion = 0;
   score = 0;
+
+  // resetar respostas do usuário
+  userAnswers = new Array(questions.length).fill(null);
+
   resultContainer.style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
+
   loadQuestion();
+  renderNavigator();
+}
+
+let userAnswers = new Array(questions.length)
+
+.fill(null);const navigatorEl = document.getElementById("navigator");
+
+function renderNavigator() {
+  navigatorEl.innerHTML = "";
+
+  questions.forEach((_, index) => {
+    const item = document.createElement("div");
+    item.classList.add("nav-item");
+    item.textContent = index + 1;
+
+    if (index === currentQuestion) {
+      item.classList.add("active");
+    }
+
+    if (userAnswers[index] !== null) {
+      item.classList.add("answered");
+    }
+
+    item.addEventListener("click", () => {
+      goToQuestion(index);
+    });
+
+    navigatorEl.appendChild(item);
+  });
+}
+
+function goToQuestion(index) {
+  animateNextQuestion(() => {
+    currentQuestion = index;
+    loadQuestion();
+    renderNavigator();
+  });
 }
 
 slideEl.classList.add("slide-active");
 
 loadQuestion();
+renderNavigator();

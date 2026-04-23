@@ -197,3 +197,38 @@ section .content {
   transform: translateY(0);
   box-shadow: 0 6px 12px var(--bg-shadow);
 }
+
+/* Navegação entre perguntas */
+.navigator {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.nav-item {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.nav-item:hover {
+  background: #999;
+}
+
+.nav-item.active {
+  background: #333;
+  color: #fff;
+}
+
+.nav-item.answered {
+  background: #4caf50;
+  color: #fff;
+}
