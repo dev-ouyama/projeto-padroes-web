@@ -26,6 +26,8 @@ body {
 }
 
 header {
+  position: absolute;
+  z-index: 999;
   background-color: var(--bg-secondary);
 }
 
@@ -263,3 +265,6 @@ section .content {
   color: #fff;
 }
 
+@media (min-height:764px) {
+  
+}
