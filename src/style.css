@@ -85,11 +85,18 @@ h6 {
   /* Colors */
   --text: #333333;
   --text-accent: #9f1239;
-  --bg-default: #ffffff;
-  --bg-secondary: #f2f2f7;
+  --bg-default: #b7bef7;
+  --bg-secondary: #fff7df;
   --bg-button: #fff0de;
   --bg-shadow: #2b2929;
 }
+
+/*
+#576A8F azul escuro
+#b7bef7 turquesa
+#fff7df bege
+#ff7544 laranha
+*/
 
 a {
   color: inherit;

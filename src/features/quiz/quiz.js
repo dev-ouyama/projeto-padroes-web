@@ -18,6 +18,18 @@ const questions = [
     ],
     correct: 1,
   },
+  {
+    question: "Qual filme é esse?",
+    image:
+      "/assets/imgs/tropa-de-elite.jpg",
+    answers: [
+      "Velozes e Furiosos",
+      "Tropa de Elite",
+      "Cidade de Deus",
+      "Matrix",
+    ],
+    correct: 1,
+  },
 ];
 
 let currentQuestion = 0;
@@ -26,7 +38,6 @@ let score = 0;
 const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
 const form = document.getElementById("quiz-form");
-const nextBtn = document.getElementById("next-btn");
 const resultContainer = document.getElementById("result-container");
 const scoreEl = document.getElementById("score");
 const imageEl = document.getElementById("quiz-image");
@@ -53,7 +64,6 @@ function animateNextQuestion(callback) {
 
 function loadQuestion() {
   answersEl.innerHTML = "";
-  nextBtn.disabled = true;
 
   const q = questions[currentQuestion];
 
@@ -71,7 +81,25 @@ function loadQuestion() {
     input.value = index;
 
     input.addEventListener("change", () => {
-      nextBtn.disabled = false;
+      const answerIndex = Number(input.value);
+
+      userAnswers[currentQuestion] = answerIndex;
+
+      if (answerIndex === questions[currentQuestion].correct) {
+        score++;
+      }
+
+      animateNextQuestion(() => {
+        currentQuestion++;
+
+        if (currentQuestion < questions.length) {
+          loadQuestion();
+          renderNavigator();
+        } else {
+          renderNavigator();
+          showResult();
+        }
+      });
     });
 
     const span = document.createElement("span");
@@ -81,59 +109,33 @@ function loadQuestion() {
     label.appendChild(span);
     answersEl.appendChild(label);
   });
-  
+
   if (userAnswers[currentQuestion] !== null) {
     const radios = document.querySelectorAll('input[name="answer"]');
     radios[userAnswers[currentQuestion]].checked = true;
-    nextBtn.disabled = false;
   }
 }
+
+const popup = document.getElementById("popup");
+
+popup.addEventListener("click", (e) => {
+  const rect = popup.getBoundingClientRect();
+
+  const clickedInDialog =
+    rect.top <= e.clientY &&
+    e.clientY <= rect.top + rect.height &&
+    rect.left <= e.clientX &&
+    e.clientX <= rect.left + rect.width;
+
+  if (!clickedInDialog) {
+    popup.close();
+  }
+});
 
 // Função para mostrar o popup de confirmação ao voltar das pergunta do Quiz
 function showPopup() {
-  const modal = document.getElementById("popup");
-  const overlay = document.querySelector(".modal-overlay");
-
-  modal.classList.remove("invisible");
-  overlay.classList.add("active");
+  popup.showModal();
 }
-
-function closePopup() {
-  const modal = document.getElementById("popup");
-  const overlay = document.querySelector(".modal-overlay");
-
-  modal.classList.add("invisible");
-  overlay.classList.remove("active");
-}
-
-document.querySelector(".modal-overlay").addEventListener("click", closePopup);
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const selected = document.querySelector('input[name="answer"]:checked');
-  if (!selected) return;
-
-  const answerIndex = Number(selected.value);
-
-  userAnswers[currentQuestion] = answerIndex;
-
-  if (answerIndex === questions[currentQuestion].correct) {
-    score++;
-  }
-
-  animateNextQuestion(() => {
-    currentQuestion++;
-
-    if (currentQuestion < questions.length) {
-      loadQuestion();
-      renderNavigator();
-    } else {
-      renderNavigator();
-      showResult();
-    }
-  });
-});
 
 function showResult() {
   document.getElementById("quiz-container").style.display = "none";
@@ -159,7 +161,7 @@ function restartQuiz() {
 
 let userAnswers = new Array(questions.length)
 
-.fill(null);const navigatorEl = document.getElementById("navigator");
+  .fill(null); const navigatorEl = document.getElementById("navigator");
 
 function renderNavigator() {
   navigatorEl.innerHTML = "";
