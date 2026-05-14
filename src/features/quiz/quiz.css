@@ -1,6 +1,6 @@
 .frame {
   width: 100%;
-  max-width: 700px;
+  max-width: 1220px;
   max-height: 500px;
   border-radius: 15px;
   -webkit-box-shadow:
@@ -115,7 +115,7 @@ section .content {
 
 /* Deixar o visual parecido com um botão */
 .answer-option span {
-  padding: .2rem;
+  padding: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,7 +135,7 @@ section .content {
   transform: translateY(-2px);
 }
 
-.answer-option input[type="radio"]:checked+span {
+.answer-option input[type="radio"]:checked + span {
   background-color: #333;
   color: #fff;
   border-color: #333;
@@ -215,7 +215,8 @@ section .content {
 
 .btn-confirm:hover {
   transform: translateY(-1px);
-  box-shadow: 0 7px 10px var(--bg-shadow),
+  box-shadow:
+    0 7px 10px var(--bg-shadow),
     0 4px 7px var(--bg-shadow);
 }
 
@@ -260,16 +261,15 @@ section .content {
 }
 
 /*Tamanho de tela de Telemóvel*/
-@media (min-height:764px) {
-  .quiz-box{
-
+@media screen and (max-width: 650px) {
+  .quiz-box {
   }
   .frame {
-  width: 100%;
-  max-width: 1400px;
-  max-height: 1000px;
-  border-radius: 15px;
-  overflow-y: clip;
+    width: 100%;
+    max-width: 1400px;
+    max-height: 1000px;
+    border-radius: 15px;
+    overflow-y: clip;
   }
 
   /*Remove botão de voltar*/
@@ -278,16 +278,14 @@ section .content {
   }
 
   .quiz-box {
- 
-  width: auto;
+    width: auto;
   }
-  #answers{
+  #answers {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
   }
-  #answers label span{
-    font-size: 77px;
+  #answers label span {
+    font-size: 37px;
   }
-
 }

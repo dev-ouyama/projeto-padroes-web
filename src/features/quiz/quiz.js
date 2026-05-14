@@ -1,15 +1,13 @@
 const questions = [
   {
     question: "Qual filme é esse?",
-    image:
-      "/assets/imgs/homem-aranha.jpg",
+    image: "/assets/imgs/homem-aranha.jpg",
     answers: ["Spider-Man", "Tropa de Elite", "Minha Mãe é uma Peça", "Shrek"],
     correct: 0,
   },
   {
     question: "Qual filme é esse?",
-    image:
-      "/assets/imgs/tropa-de-elite.jpg",
+    image: "/assets/imgs/tropa-de-elite.jpg",
     answers: [
       "Velozes e Furiosos",
       "Tropa de Elite",
@@ -20,8 +18,7 @@ const questions = [
   },
   {
     question: "Qual filme é esse?",
-    image:
-      "/assets/imgs/tropa-de-elite.jpg",
+    image: "/assets/imgs/tropa-de-elite.jpg",
     answers: [
       "Velozes e Furiosos",
       "Tropa de Elite",
@@ -85,20 +82,21 @@ function loadQuestion() {
 
       userAnswers[currentQuestion] = answerIndex;
 
-      if (answerIndex === questions[currentQuestion].correct) {
-        score++;
+      const isLastQuestion = currentQuestion === questions.length - 1;
+
+      // Última pergunta → sem animação lateral
+      if (isLastQuestion) {
+        loadQuestion();
+        renderNavigator();
+        return;
       }
 
+      // Perguntas normais → animação
       animateNextQuestion(() => {
         currentQuestion++;
 
-        if (currentQuestion < questions.length) {
-          loadQuestion();
-          renderNavigator();
-        } else {
-          renderNavigator();
-          showResult();
-        }
+        loadQuestion();
+        renderNavigator();
       });
     });
 
@@ -114,6 +112,8 @@ function loadQuestion() {
     const radios = document.querySelectorAll('input[name="answer"]');
     radios[userAnswers[currentQuestion]].checked = true;
   }
+
+  updateResultsButton();
 }
 
 const popup = document.getElementById("popup");
@@ -159,9 +159,8 @@ function restartQuiz() {
   renderNavigator();
 }
 
-let userAnswers = new Array(questions.length)
-
-  .fill(null); const navigatorEl = document.getElementById("navigator");
+let userAnswers = new Array(questions.length).fill(null);
+const navigatorEl = document.getElementById("navigator");
 
 function renderNavigator() {
   navigatorEl.innerHTML = "";
@@ -194,6 +193,43 @@ function goToQuestion(index) {
     renderNavigator();
   });
 }
+
+const resultsButton = document.getElementById("results-button");
+
+//Mostra o botão caso seja a ultima pergunta
+function updateResultsButton() {
+  const isLastQuestion = currentQuestion === questions.length - 1;
+
+  resultsButton.style.display = isLastQuestion ? "block" : "none";
+}
+
+/**
+ * Função que permite o usuario ver os resultados, porém somente se tiver respondido todas as perguntas
+ * Caso contrário, mostrará quais perguntas ainda precisam de respostas
+ **/
+resultsButton.addEventListener("click", () => {
+  const unanswered = userAnswers
+    .map((answer, index) => (answer === null ? index + 1 : null))
+    .filter((item) => item !== null);
+  console.log(unanswered);
+  if (unanswered.length > 0) {
+    alert(
+      `Você ainda precisa responder as perguntas: ${unanswered.join(", ")}`,
+    );
+
+    return;
+  }
+
+  score = 0;
+
+  userAnswers.forEach((answer, index) => {
+    if (answer === questions[index].correct) {
+      score++;
+    }
+  });
+
+  showResult();
+});
 
 slideEl.classList.add("slide-active");
 

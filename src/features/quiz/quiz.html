@@ -1,50 +1,78 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./quiz.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Quiz</title>
-  <link rel="stylesheet" href="../../style.css" />
-  <link rel="stylesheet" href="./quiz.css" />
-</head>
-
-<body>
-  <dialog id="popup" class="modal">
-    <form method="dialog" class="modal-content">
-      <h1>Você realmente quer voltar?</h1>
-      <p>O seu progresso será perdido</p>
-      <div class="to-left"> <a class="btn-confirm" href="../../index.html">Confirmar</a> <button type="submit"
-          class="btn-cancel" value="cancel"> Cancelar </button> </div>
-    </form>
-  </dialog>
-  <header id="header-container">
-    <nav> 
-      <button type="button" class="back-button" onclick="showPopup()" aria-label="Voltar"> 
-        <svg class="button-image"
-          viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" aria-hidden="true">
-          <path d="M15 22l-10-10 10-10" />
-        </svg> 
-      </button> 
-    </nav>
-  </header>
-  <section class="content">
-    <div id="navigator" class="navigator"></div>
-    <div id="quiz-container">
-      <div id="slide" class="slide">
-        <h2 id="question">Pergunta aqui</h2>
-        <div class="quiz-box"> <img id="quiz-image" src="" alt="Imagem da pergunta" class="frame" />
-          <form id="quiz-form" class="vertical-box">
-            <div id="answers"></div>
-          </form>
+  <body>
+    <dialog id="popup" class="modal">
+      <form method="dialog" class="modal-content">
+        <h1>Você realmente quer voltar?</h1>
+        <p>O seu progresso será perdido</p>
+        <div class="to-left">
+          <a class="btn-confirm" href="../../index.html">Confirmar</a>
+          <button type="submit" class="btn-cancel" value="cancel">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <header id="header-container">
+      <nav>
+        <button
+          type="button"
+          class="back-button"
+          onclick="showPopup()"
+          aria-label="Voltar"
+        >
+          <svg
+            class="button-image"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="black"
+            stroke-width="3"
+            aria-hidden="true"
+          >
+            <path d="M15 22l-10-10 10-10" />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <section class="content">
+      <div id="navigator" class="navigator"></div>
+      <div id="quiz-container">
+        <div id="slide" class="slide">
+          <h2 id="question">Pergunta aqui</h2>
+          <div class="quiz-box">
+            <img
+              id="quiz-image"
+              src=""
+              alt="Imagem da pergunta"
+              class="frame"
+            />
+            <form id="quiz-form" class="vertical-box">
+              <div id="answers"></div>
+              <button
+                type="button"
+                id="results-button"
+                class="btn-confirm"
+              >
+                Ver Resultados
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div id="result-container" style="display: none">
-      <h2>Resultado</h2>
-      <p id="score"></p> <button onclick="restartQuiz()">Reiniciar</button>
-    </div>
-  </section>
-  <script src="quiz.js"></script>
-</body>
-
+      <div id="result-container" style="display: none">
+        <h2>Resultado</h2>
+        <p id="score"></p>
+        <button onclick="restartQuiz()">Reiniciar</button>
+      </div>
+    </section>
+    <script src="quiz.js"></script>
+  </body>
 </html>
