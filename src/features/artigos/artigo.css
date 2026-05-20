@@ -7,6 +7,8 @@
 
 body {
     text-align: auto;
+    padding: 20px 10px;
+    border-radius: 30px;
 }
 
 p {
@@ -20,7 +22,7 @@ dt {
     width: 15%;
     margin: 0 auto;
     padding: 8px;
-    background-color: rgb(159, 157, 157);
+    background-color: #ebbc84;
 }
 
 /*imagens*/
@@ -59,7 +61,7 @@ a:hover {
     margin: 0px auto;
     justify-content: space-between;
     padding: 20px;
-    background: rgb(159, 157, 157);
+    background: #d9ddf6;
 }
 
 .recs ul {
@@ -84,7 +86,7 @@ a:hover {
 
 /*Rodapé/copyright*/
 footer  {
-    background-color: rgb(159, 157, 157);
+    background-color: #d9ddf6;
     padding: 30px 20px;
     margin-top: 40px;
 }
@@ -98,6 +100,12 @@ footer  {
     flex-wrap: wrap;
     gap: 20px;
 }
+
+p {
+    padding:20px;
+
+}
+
 
 @media (max-width: 600px) {
     body {
