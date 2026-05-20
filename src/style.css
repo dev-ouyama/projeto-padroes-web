@@ -277,6 +277,7 @@ section {
   border-radius: 50%;
   transition: all 0.2s ease;
   margin: 1rem;
+  border-style: solid;
 }
 
 .button-image {

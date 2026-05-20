@@ -181,6 +181,9 @@ function animateNextQuestion(callback) {
 }
 
 const popup = document.getElementById("popup");
+const backButton = document.getElementById("quiz-back-button");
+
+backButton.addEventListener("click", showPopup);
 
 popup.addEventListener("click", (e) => {
   const rect = popup.getBoundingClientRect();
