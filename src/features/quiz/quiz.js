@@ -140,6 +140,7 @@ function showPopup() {
 function showResult() {
   document.getElementById("quiz-container").style.display = "none";
   resultContainer.style.display = "block";
+  resultsButton.style.display = "none";
   scoreEl.textContent = `Você acertou ${score} de ${questions.length}`;
 }
 
@@ -198,9 +199,10 @@ const resultsButton = document.getElementById("results-button");
 
 //Mostra o botão caso seja a ultima pergunta
 function updateResultsButton() {
-  const isLastQuestion = currentQuestion === questions.length - 1;
+  // Checa se o usuário respondeu TODAS as perguntas, se sim, aparece o botão de ver resultados
+  const todasRespondidas = userAnswers.every ((answer) => answer !== null);
 
-  resultsButton.style.display = isLastQuestion ? "block" : "none";
+  resultsButton.style.display = todasRespondidas ? "block" : "none";
 }
 
 /**

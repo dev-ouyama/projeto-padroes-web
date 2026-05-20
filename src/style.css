@@ -107,6 +107,8 @@ body {
   font-family: var(--ff-body);
   font-weight: var(--fw-regular);
   color: var(--text);
+  /*Fundo padrão do body para corrigir o problema com os poligonos de fim de seção*/
+  background-color: var(--bg-default);
 }
 
 h1,
