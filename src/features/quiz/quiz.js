@@ -1,8 +1,3 @@
-import { cinema } from './questions/cinema.js';
-import { music } from './questions/music.js';
-import { cuisine } from './questions/cuisine.js';
-
-
 /*----------------LÓGICA---------------------------------------*/
 
 /*A lógica será:
@@ -13,11 +8,28 @@ deverá ter um shuffle entre as perguntas na hora de ser enviada para o site*/
 /*---------------------------------------------------------------*/
 
 /*Cada tema é um array de pares de perguntas (nacional e internacional)*/
-const themes = {
-  cinema: cinema,
-  music: music,
-  cuisine: cuisine,
-};
+async function loadQuestions() {
+  try {
+    const [cinema, music, cuisine] = await Promise.all([
+      fetch("./data/cinema.json").then(r => r.json()),
+      fetch("./data/music.json").then(r => r.json()),
+      fetch("./data/cuisine.json").then(r => r.json()),
+    ]);
+
+    const themes = {
+      cinema,
+      music,
+      cuisine,
+    };
+
+    console.log(themes);
+
+  } catch (error) {
+    console.error("Erro carregando JSON:", error);
+  }
+}
+
+loadQuestions();
 
 /*-------------------MONTAGEM DAS PERGUNTAS----------------------*/
 
