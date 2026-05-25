@@ -211,7 +211,6 @@ section {
 .card {
   position: relative; /* For the absolute pos. link to stay inside */
   padding: 20px;
-  border: 1px solid #ddd;
 }
 
 .card-link::after {
@@ -226,8 +225,8 @@ section {
 
 .cards-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  width: clamp(280px, 70%, 600px);
+  grid-template-columns: 1fr 1fr;
+  max-width: 40vw;
   gap: 1rem;
 }
 
@@ -277,6 +276,7 @@ section {
   border-radius: 50%;
   transition: all 0.2s ease;
   margin: 1rem;
+  border-style: solid;
 }
 
 .button-image {
@@ -292,4 +292,25 @@ section {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.06));
   transform: scale(1.05);
   transition: 0.2s ease;
+}
+
+@media screen and (max-width: 600px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+    max-width: 80%;
+  }
+
+  .card {
+    aspect-ratio: auto;
+  }
+
+  .card p,
+  .card h3 {
+    opacity: 1;
+    color: white;
+  }
+
+  section {
+    padding: 20px;
+  }
 }

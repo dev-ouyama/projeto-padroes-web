@@ -1,9 +1,9 @@
-export const cinema = [
+const cinema = [
     {
         nacional: {
             /*Filme Tropa de Elite*/
             question: "Qual filme é esse?",
-            image: "/../assets/imgs/tropa-de-elite.jpg",
+            image: "../../../assets/imgs/tropa-de-elite.jpg",
             answers: [
                 "Carandiru: O Filme",
                 "Tropa de Elite",
@@ -15,7 +15,7 @@ export const cinema = [
         internacional: {
             /*Filme Homem Aranha*/
             question: "Que personagem de filme é esse?",
-            image: "/../assets/imgs/homem-aranha.jpg",
+            image: "../../../assets/imgs/homem-aranha.jpg",
             answers: [
                 "Homem Aranha",
                 "Superman",
@@ -29,7 +29,7 @@ export const cinema = [
         nacional: {
             /*Filme Cidade de Deus*/
             question: "Qual filme é esse?",
-            image: "/../assets/imgs/cidade-de-deus.jpg",
+            image: "../../../assets/imgs/cidade-de-deus.jpg",
             answers: [
                 "Carandiru: O Filme",
                 "Tropa de Elite",
@@ -41,7 +41,7 @@ export const cinema = [
         internacional: {
             /*Filme ------------*/
             question: "Qual filme é esse?",
-            image: "/../assets/imgs/homem-aranha.jpg",
+            image: "../../../assets/imgs/homem-aranha.jpg",
             answers: [
                 "Spider-Man",
                 "Tropa de Elite",

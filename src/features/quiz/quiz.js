@@ -1,8 +1,3 @@
-import { cinema } from './questions/cinema.js';
-import { music } from './questions/music.js';
-import { cuisine } from './questions/cuisine.js';
-
-
 /*----------------LÓGICA---------------------------------------*/
 
 /*A lógica será:
@@ -14,9 +9,9 @@ deverá ter um shuffle entre as perguntas na hora de ser enviada para o site*/
 
 /*Cada tema é um array de pares de perguntas (nacional e internacional)*/
 const themes = {
-  cinema: cinema,
-  music: music,
-  cuisine: cuisine,
+  cinema,
+  music,
+  cuisine
 };
 
 /*-------------------MONTAGEM DAS PERGUNTAS----------------------*/
@@ -181,6 +176,9 @@ function animateNextQuestion(callback) {
 }
 
 const popup = document.getElementById("popup");
+const backButton = document.getElementById("quiz-back-button");
+
+backButton.addEventListener("click", showPopup);
 
 popup.addEventListener("click", (e) => {
   const rect = popup.getBoundingClientRect();
@@ -305,4 +303,3 @@ slideEl.classList.add("slide-active");
 
 
 loadQuestion();
-renderNavigator();

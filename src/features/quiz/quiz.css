@@ -15,10 +15,6 @@
   overflow-y: clip;
 }
 
-.back-button {
-  border-style: solid;
-}
-
 html,
 body {
   height: 100%;

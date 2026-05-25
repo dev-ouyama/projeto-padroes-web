@@ -1,21 +1,22 @@
-export const music = [
+const cuisine = [
     {
+        //Difícil
         nacional: {
-            /*Filme Tropa de Elite*/
-            question: "Qual MUSICA é esse?",
-            image: "/../assets/imgs/tropa-de-elite.jpg",
+            /*Tucupi*/
+            question: "Qual é esse prato típico da culinária paraense?",
+            image: "../../../assets/imgs/tucupi.jpg",
             answers: [
-                "Carandiru: O Filme",
-                "Tropa de Elite",
-                "Cidade de Deus",
-                "Central do Brasil",
+                "Maniçoba",
+                "Açaí",
+                "Tacacá",
+                "Tucupi",
             ],
-            correct: 1,
+            correct: 3,
         },
         internacional: {
             /*Filme Homem Aranha*/
-            question: "Qual MUSICA é esse?",
-            image: "/../assets/imgs/homem-aranha.jpg",
+            question: "Qual comida é essa?",
+            image: "../../../assets/imgs/homem-aranha.jpg",
             answers: [
                 "Spider-Man",
                 "Tropa de Elite",
@@ -28,8 +29,8 @@ export const music = [
     {
         nacional: {
             /*Filme ----------*/
-            question: "Qual MUSICA é esse?",
-            image: "/../assets/imgs/tropa-de-elite.jpg",
+            question: "Qual comida é essa?",
+            image: "../../../assets/imgs/tropa-de-elite.jpg",
             answers: [
                 "Carandiru: O Filme",
                 "Tropa de Elite",
@@ -40,8 +41,8 @@ export const music = [
         },
         internacional: {
             /*Filme ------------*/
-            question: "Qual MUSICA é esse?",
-            image: "/../assets/imgs/homem-aranha.jpg",
+            question: "Qual comida é essa?",
+            image: "../../../assets/imgs/homem-aranha.jpg",
             answers: [
                 "Spider-Man",
                 "Tropa de Elite",
