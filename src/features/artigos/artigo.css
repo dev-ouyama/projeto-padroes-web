@@ -82,10 +82,9 @@ li {
 figure {
   margin: 20px auto;
   text-align: center;
-}
-
-img {
-  width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 figcaption {
@@ -124,11 +123,6 @@ a:hover {
 
 .recs ul {
   list-style-type: square;
-  padding-left: 20px;
-}
-
-.recs li {
-  margin-bottom: 8px;
 }
 
 /*vídeos*/
@@ -189,14 +183,6 @@ html {
     padding: 15px;
   }
 
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    margin-bottom: 12px;
-  }
-
   .figure-wrap {
     display: flex;
     flex-direction: column;
@@ -217,13 +203,10 @@ html {
   body {
     padding: 20px;
   }
-  img {
-    max-width: 30%;
-  }
 
   .figure-wrap {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
 
@@ -232,18 +215,6 @@ html {
   }
 
   .figure-wrap figure {
-    width: 40%;
-  }
-}
-
-/*otimização geral para desktop*/
-@media (max-width: 1200px) {
-  body {
-    padding: 30px;
-  }
-
-  .recs-card {
-    padding: 30px;
-    gap: 30px;
+    width: 100%;
   }
 }
