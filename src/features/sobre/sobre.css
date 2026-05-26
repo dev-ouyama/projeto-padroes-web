@@ -8,3 +8,11 @@
 dl dt{
     font-weight: bold;
 }
+
+footer {
+  padding: 1rem;
+}
+
+.logo-utfpr {
+  width: 10rem;
+}

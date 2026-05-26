@@ -78,7 +78,7 @@ figcaption {
 }
 
 /*links*/
-a {
+a:not(.back-button) {
   cursor: pointer;
   color: #9f1239;
   font-weight: 500;

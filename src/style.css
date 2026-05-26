@@ -352,6 +352,10 @@ section {
   transition: all 0.2s ease;
   margin: 1rem;
   border-style: solid;
+  background-color: transparent;
+  border-width: 2px;
+  position: fixed;
+  z-index: 5;
 }
 
 .button-image {
@@ -361,6 +365,9 @@ section {
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
+  stroke: #333333;
+  stroke-width: 2px;
+  transition: stroke 0.3s ease;
 }
 
 .back-button:hover {
@@ -369,7 +376,19 @@ section {
   transition: 0.2s ease;
 }
 
+.back-button:hover .button-image {
+  stroke: white;
+}
+
+.back-button:hover {
+  background-color: #333333;
+}
+
 @media screen and (max-width: 600px) {
+  .back-button {
+    display: none;
+  }
+
   .cards-wrapper {
     grid-template-columns: 1fr;
     max-width: 80%;
