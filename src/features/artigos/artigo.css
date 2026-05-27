@@ -1,39 +1,15 @@
-* {
-  /*Zera margens*/
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  /* Typography */
-  --ff-heading: "Space Grotesk", sans-serif;
-  --ff-body: "Roboto", sans-serif;
-
-  --fw-bold: 700;
-  --fw-regular: 400;
-
-  /* Colors */
-  --text: #333333;
-  --text-accent: #9f1239;
-  --bg-default: #fefefe;
-  --bg-secondary: #d0d0d0;
-  --bg-button: #fefefe;
-  --bg-shadow: #2b2929;
-}
-
 body {
   text-align: left;
-  padding: 20px 10px;
-  border-radius: 6px;
-
-  margin: 0 auto;
   line-height: 1.5;
 }
 
 main {
   max-width: 50%;
   margin: 0 auto;
+}
+
+article {
+  margin: 4rem auto;
 }
 
 section {
@@ -43,8 +19,12 @@ section {
   min-height: 0;
 }
 
+p {
+  align-self: start;
+}
+
 h2 {
-  margin: 20px 0 20px;
+  margin: 20px;
 }
 
 .figure-wrap {
@@ -64,7 +44,7 @@ h2 {
 
 p {
   text-align: left;
-  padding: 20px;
+  padding: 1rem;
 }
 
 ul {
@@ -74,8 +54,11 @@ ul {
 }
 
 li {
-  margin-bottom: 8px;
   line-height: 1.5;
+}
+
+li p {
+  padding: 0.5rem;
 }
 
 /*imagens*/
@@ -117,7 +100,7 @@ a:hover {
   border-radius: 6px;
   margin: 0 auto;
   padding: 20px;
-  background: #d9ddf6;
+  background: var(--bg-secondary);
   gap: 20px;
 }
 
@@ -145,24 +128,9 @@ a:hover {
 
 /*Rodapé/copyright*/
 footer {
-  background-color: #d9ddf6;
-  padding: 30px 20px;
+  background: var(--bg-secondary);
   margin-top: 40px;
-  border-radius: 6px;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-html {
-  font-size: 16px;
+  border-radius: 6px 6px 0 0;
 }
 
 /*ajustes mobile*/
@@ -179,7 +147,6 @@ html {
   }
 
   .recs-card {
-    border-radius: 20px;
     padding: 15px;
   }
 
