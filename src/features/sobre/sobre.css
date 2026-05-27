@@ -27,7 +27,7 @@ main {
   justify-content: flex-start;
   min-height: 100%;
   align-items: flex-start;
-  margin-left: 5rem;
+  margin-left: 7%;
   line-height: 1.8;
   margin-bottom: 1rem;
 }
@@ -43,6 +43,12 @@ h2 {
 @media screen and (max-width: 600px) {
   .about-title {
     padding: 1.5rem 0rem 1rem 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 }
 
