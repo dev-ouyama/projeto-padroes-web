@@ -386,6 +386,23 @@ section {
   background-color: #333333;
 }
 
+@media screen and (max-width: 1100px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+    max-width: 80%;
+  }
+
+  .card p,
+  .card h3 {
+    opacity: 1;
+    color: white;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .back-button {
     display: none;

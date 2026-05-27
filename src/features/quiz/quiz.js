@@ -96,6 +96,7 @@ function loadQuestion() {
   questionEl.textContent = q.question;
 
   imageEl.src = q.image;
+  imageEl.alt = q.imageAlt;
 
   q.answers.forEach((answer, index) => {
     const label = document.createElement("label");

@@ -1,10 +1,11 @@
 const cuisine = [
     {
-        //Difícil
+        //Dificil
         nacional: {
             /*Tucupi*/
             question: "Qual é esse prato típico da culinária paraense?",
             image: "../../../assets/imgs/tucupi.jpg",
+            alt: "Cumbuca com caldo amarelo feito de mandioca brava.",
             answers: [
                 "Maniçoba",
                 "Açaí",
