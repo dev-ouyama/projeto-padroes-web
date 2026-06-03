@@ -146,7 +146,7 @@ const cuisine = [
         internacional: {
             /* Hummus */
             question: "Qual é essa pasta típica da culinária do Oriente Médio?",
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Lebanese_style_hummus.jpg/250px-Lebanese_style_hummus.jpg",
+            image: "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_16:9/k%2FPhoto%2FRecipes%2F2024-08-hummus%2Fhummus-165",
             imageAlt: "Pasta bege cremosa de grão-de-bico com fio de azeite e páprica.",
             answers: [
                 "Baba Ganoush",

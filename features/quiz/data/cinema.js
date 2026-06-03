@@ -3,14 +3,14 @@ const cinema = [
         nacional: {
             /*Filme Tropa de Elite*/
             question: "Qual filme é esse?",
-            image: "../../../assets/imgs/tropa-de-elite.jpg",
+            image: "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/06/wagner-moura-tropa-de-elite.jpg?w=1200&h=1200&crop=1",
             imageAlt: "Homem do BOPE segurando fuzil.",
             answers: [
                 "Carandiru: O Filme",
                 "Tropa de Elite",
                 "Cidade de Deus",
                 "Central do Brasil",
-            ],
+            ],  
             correct: 1,
             tema: "cinema",
             nacional: true
@@ -18,7 +18,7 @@ const cinema = [
         internacional: {
             /*Filme Homem Aranha*/
             question: "Que personagem de filme é esse?",
-            image: "../../../assets/imgs/homem-aranha.jpg",
+            image: "https://upload.wikimedia.org/wikipedia/pt/thumb/2/21/Web_of_Spider-Man_Vol_1_129-1.png/250px-Web_of_Spider-Man_Vol_1_129-1.png",
             imageAlt: "",
             answers: [
                 "Homem Aranha",
@@ -67,8 +67,8 @@ const cinema = [
         nacional: {
             /* Central do Brasil */
             question: "Qual filme brasileiro é esse?",
-            image: "../../../assets/imgs/cinema/central-do-brasil.jpg",
-            imageAlt: "Mulher idosa sentada em frente a uma máquina de escrever em estação de trem",
+            image: "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/06/central-do-brasil-fernanda-montenegro.png?w=720",
+            imageAlt: "Mulher idosa interpretada por Fernanda Montenegro deitada no colo de garoto.",
             answers: [
                 "Central do Brasil",
                 "O Auto da Compadecida",
@@ -82,7 +82,7 @@ const cinema = [
         internacional: {
             /* Forrest Gump */
             question: "Qual filme é esse?",
-            image: "../../../assets/imgs/cinema/forrest-gump.jpg",
+            image: "https://www.elhombre.com.br/wp-content/uploads/2021/06/forrest-gump-1.jpg",
             imageAlt: "Homem sentado em banco de praça com caixa de chocolates",
             answers: [
                 "Cast Away",
@@ -99,7 +99,7 @@ const cinema = [
         nacional: {
             /* O Auto da Compadecida */
             question: "Qual filme brasileiro é esse?",
-            image: "../../../assets/imgs/cinema/auto-da-compadecida.jpg",
+            image: "https://s2-techtudo.glbimg.com/oHJiZY7IFO4HKh5L_IFdL6Xm69s=/0x0:984x647/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/n/8/xgGpCmRISJiICEWE0ppg/chico-selton-mello-e-joao-grilo-matheus-nachtergaele-o-auto-da-compadecida.webp",
             imageAlt: "Dois homens com chapéu de cangaceiro no sertão nordestino",
             answers: [
                 "Lisbela e o Prisioneiro",

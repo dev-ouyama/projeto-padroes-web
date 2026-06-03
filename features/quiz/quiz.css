@@ -246,9 +246,9 @@ section .content {
 }
 
 .nav-item.answered {
-  background: #4caf50;
+  background: var(--nav-quiz);
   color: var(--bg-default);
-}
+} 
 
 #restart-button {
   display: block;
