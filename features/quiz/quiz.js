@@ -434,7 +434,10 @@ function renderRadialCharts(themeScores) {
       scales: {
         r: {
           beginAtZero: true,
-          max: numQuestionsPerTheme
+          max: numQuestionsPerTheme,
+          ticks: {
+            stepSize: 1  //pra num inteiro
+          }
         }
       }
     }
