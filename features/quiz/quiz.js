@@ -5,12 +5,6 @@ terão 4 pares (cada par tem uma pergunta nacional e uma internacional, as duas 
 Dentre esses 12 pares (4 pares de todos os temas)
 deverá ter um shuffle entre as perguntas na hora de ser enviada para o site*/
 
-//constantes globais para o quiz
-const numPairs = 1; // número de pares de perguntas por tema
-const numThemes = Object.keys(themes).length;
-const numQuestions = numPairs * 2 * numThemes; //numero total de perguntas (2 perguntas por par, 3 temas)
-
-/*---------------------------------------------------------------*/
 
 /*Cada tema é um array de pares de perguntas (nacional e internacional)*/
 const themes = {
@@ -18,6 +12,16 @@ const themes = {
   music,
   cuisine,
 };
+
+//constantes globais para o quiz
+const numPairs = 2; // número de pares de perguntas por tema
+const numThemes = Object.keys(themes).length;
+const numQuestions = numPairs * 2 * numThemes; //numero total de perguntas (2 perguntas por par, 3 temas)
+const numQuestionsPerTheme = numPairs * 2; // numero total de perguntas por tema (2 perguntas por par)
+
+/*---------------------------------------------------------------*/
+
+
 
 /*-------------------MONTAGEM DAS PERGUNTAS----------------------*/
 
@@ -210,6 +214,9 @@ function showResult() {
   resultContainer.style.display = "block";
   resultsButton.style.display = "none";
   scoreEl.textContent = `Você acertou ${score} de ${questions.length}`;
+  // RENDERIZA RADIAL
+  calcThemeScore(questions, userAnswers);
+  renderRadialCharts(themeScores);
 }
 
 // Listener em button restart para chamar a funcao restarquiz
@@ -220,6 +227,11 @@ document
 function restartQuiz() {
   currentQuestion = 0;
   score = 0;
+  themeScores = {
+    cinema: { nacional: 0, internacional: 0 },
+    music: { nacional: 0, internacional: 0 },
+    cuisine: { nacional: 0, internacional: 0 }
+  };
 
   // resetar respostas do usuário
   userAnswers = new Array(questions.length).fill(null);
@@ -347,7 +359,7 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 });
 
 
-/*-----------------------------A FAZER--------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
 
 /*RESULTADO EM FORMA RADIAL - MOSTRANDO A PORCENTAGEM DE ACERTO DO USUÁRIO EM CADA TEMA NO ESPECTRO NACIONAL E NO INTERNCIONAL*/
 
@@ -356,6 +368,21 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 // questions[i] a pergunta, que tem .tema(culinaria,cinema,msuica) e .nacional(flag)
 // userAnswers[i]o indice que o usuário escolheu
 // questions[i].correct o indice correto
+
+let themeScores = {
+  cinema: {
+    nacional: 0,
+    internacional: 0
+  },
+  music: {
+    nacional: 0,
+    internacional: 0
+  },
+  cuisine: {
+    nacional: 0,
+    internacional: 0
+  }
+};
 
 function fillThemeScores(correct, tema, nacional) {
   if (correct) {
@@ -367,20 +394,7 @@ function fillThemeScores(correct, tema, nacional) {
 
 // 
 function calcThemeScore(questions, userAnswers) {
-  let themeScores = {
-    cinema: {
-      nacional: 0,
-      internacional: 0
-    },
-    music: {
-      nacional: 0,
-      internacional: 0
-    },
-    cuisine: {
-      nacional: 0,
-      internacional: 0
-    }
-  };
+
   // contador de acertos por tema e tipo(nacional e internacional)
   questions.forEach((question, index) => {
     // verifica o usuario respondeu corretamente a pergutna, se sim, incrementa o contador de themeScores do tema e se é nacional ou nao
@@ -391,7 +405,42 @@ function calcThemeScore(questions, userAnswers) {
   return themeScores;
 }
 
+/*----------------------------RENDER RADIAL----------------------------------*/
+
+// funçao que cria o grafico radial (Radar Chart) usando a biblioteca Chart.js e utilizando os dados calculados por calcThemeScore
+
+const radialChart = document.getElementById('radarChart');
 // Renderiza os gráficos radiais com os resultados calculados por calcThemeScore
-//function renderRadialCharts(themeScores) {}
+
+function renderRadialCharts(themeScores) {
+  new Chart(radialChart, {
+    type: 'radar',
+    data: {
+      labels: ['Cinema Nacional', 'Música Nacional', 'Culinária Nacional', 'Cinema Internacional', 'Música Internacional', 'Culinária Internacional'],
+      datasets: [{
+        label: 'Acertos',
+        data: [
+          themeScores.cinema.nacional,
+          themeScores.music.nacional,
+          themeScores.cuisine.nacional,
+          themeScores.cinema.internacional,
+          themeScores.music.internacional,
+          themeScores.cuisine.internacional
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        r: {
+          beginAtZero: true,
+          max: numQuestionsPerTheme
+        }
+      }
+    }
+  });
+}
 
 // Radar Chart:https://www.chartjs.org/docs/latest/charts/radar.html
+
+

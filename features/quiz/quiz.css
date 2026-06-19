@@ -261,6 +261,13 @@ section .content {
   margin-bottom: 0.5rem;
 }
 
+/*RADAR CHART*/
+
+#radar-chart-container {
+  width: 300px;
+  height: 300px;
+}
+
 /*Tamanho de tela de Telemóvel*/
 @media screen and (max-width: 768px) {
   .frame {
