@@ -17,7 +17,6 @@ const themes = {
 const numPairs = 2; // número de pares de perguntas por tema
 const numThemes = Object.keys(themes).length;
 const numQuestions = numPairs * 2 * numThemes; //numero total de perguntas (2 perguntas por par, 3 temas)
-const numQuestionsPerTheme = numPairs * 2; // numero total de perguntas por tema (2 perguntas por par)
 
 /*---------------------------------------------------------------*/
 
@@ -215,8 +214,7 @@ function showResult() {
   resultsButton.style.display = "none";
   scoreEl.textContent = `Você acertou ${score} de ${questions.length}`;
   // RENDERIZA RADIAL
-  calcThemeScore(questions, userAnswers);
-  renderRadialCharts(themeScores);
+  renderRadialCharts(calcThemeScore(questions, userAnswers));
 }
 
 // Listener em button restart para chamar a funcao restarquiz
@@ -227,11 +225,6 @@ document
 function restartQuiz() {
   currentQuestion = 0;
   score = 0;
-  themeScores = {
-    cinema: { nacional: 0, internacional: 0 },
-    music: { nacional: 0, internacional: 0 },
-    cuisine: { nacional: 0, internacional: 0 }
-  };
 
   // resetar respostas do usuário
   userAnswers = new Array(questions.length).fill(null);
@@ -369,22 +362,9 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 // userAnswers[i]o indice que o usuário escolheu
 // questions[i].correct o indice correto
 
-let themeScores = {
-  cinema: {
-    nacional: 0,
-    internacional: 0
-  },
-  music: {
-    nacional: 0,
-    internacional: 0
-  },
-  cuisine: {
-    nacional: 0,
-    internacional: 0
-  }
-};
 
-function fillThemeScores(correct, tema, nacional) {
+
+function fillThemeScores(themeScores, correct, tema, nacional) {
   if (correct) {
     let origem = "nacional";
     if (nacional == false) { origem = "internacional"; }
@@ -394,12 +374,25 @@ function fillThemeScores(correct, tema, nacional) {
 
 // 
 function calcThemeScore(questions, userAnswers) {
-
+  let themeScores = {
+    cinema: {
+      nacional: 0,
+      internacional: 0
+    },
+    music: {
+      nacional: 0,
+      internacional: 0
+    },
+    cuisine: {
+      nacional: 0,
+      internacional: 0
+    }
+  };
   // contador de acertos por tema e tipo(nacional e internacional)
   questions.forEach((question, index) => {
     // verifica o usuario respondeu corretamente a pergutna, se sim, incrementa o contador de themeScores do tema e se é nacional ou nao
     if (userAnswers[index] === question.correct) {
-      fillThemeScores(true, question.tema, question.nacional);
+      fillThemeScores(themeScores, true, question.tema, question.nacional);
     }
   });
   return themeScores;
@@ -411,6 +404,8 @@ function calcThemeScore(questions, userAnswers) {
 
 const radialChart = document.getElementById('radarChart');
 // Renderiza os gráficos radiais com os resultados calculados por calcThemeScore
+
+// renderRadialCharts(calcThemeScore(questions, userAnswers));
 
 function renderRadialCharts(themeScores) {
   new Chart(radialChart, {
@@ -434,7 +429,7 @@ function renderRadialCharts(themeScores) {
       scales: {
         r: {
           beginAtZero: true,
-          max: numQuestionsPerTheme,
+          max: numPairs,
           ticks: {
             stepSize: 1  //pra num inteiro
           }
