@@ -22,8 +22,8 @@ const cinema = [
             imageAlt: "",
             answers: [
                 "Homem Aranha",
-                "Superman",
-                "Batman",
+                "Graça Aranha",
+                "Homem Formiga",
                 "Homem Libélula"
             ],
             correct: 0,
@@ -35,7 +35,7 @@ const cinema = [
         nacional: {
             /*Filme Cidade de Deus*/
             question: "Qual filme é esse?",
-            image: "../../../assets/imgs/cidade-de-deus.jpg",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOecpBVeL8FSXW8UWzPvIO88RfS3FQGpuUlfNK-csdxqBcq8kzqRsW7a8&s=10",
             imageAlt: "",
             answers: [
                 "Carandiru: O Filme",
@@ -114,11 +114,11 @@ const cinema = [
         internacional: {
             /* Matrix */
             question: "Qual filme é esse?",
-            image: "../../../assets/imgs/cinema/matrix.jpg",
-            imageAlt: "Homem de sobretudo preto desviando de balas em câmera lenta",
+            image: "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/57CA/production/_122247422_pills.jpg",
+            imageAlt: "Duas mãos segurando pílulas vermelha e azul, respectivamente",
             answers: [
                 "Matrix",
-                "Minority Report",
+                "Take Your Pills",
                 "O Exterminador do Futuro",
                 "Blade Runner"
             ],
@@ -379,6 +379,38 @@ const cinema = [
                 "Mamma Mia"
             ],
             correct: 0,
+            tema: "cinema",
+            nacional: false
+        }
+    },
+    {
+        nacional: {
+            /* Menino Maluquinho */
+            question: "Qual filme brasileiro é esse?",
+            image: "https://media.bcc.org.br/imagem/fotografia/jpg/FN_38856.jpg",
+            imageAlt: "Criança sorrindo em uma cena do filme",
+            answers: [
+                "Turma da Mônica: Laços",
+                "Chico Bento e a Goiabeira Maraviósa",
+                "Menino Maluquinho",
+                "Castelo Rá-Tim-Bum, o Filme",
+            ],
+            correct: 2,
+            tema: "cinema",
+            nacional: true
+        },
+        internacional: {
+            /* Escola de Rock */
+            question: "Qual filme é esse?",
+            image: "https://i0.wp.com/valkirias.com.br/wp-content/uploads/2018/07/Escola-de-Rock_2.png?resize=740%2C416",
+            imageAlt: "Professor dando aula de música para crianças na escola",
+            answers: [
+                "Adorável Professor",
+                "Escola de Rock",
+                "Whiplash: Em Busca da Perfeição",
+                "Rock ‘n’ Roll High School"
+            ],
+            correct: 1,
             tema: "cinema",
             nacional: false
         }
