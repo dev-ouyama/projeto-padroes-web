@@ -100,6 +100,15 @@ function loadQuestion() {
 
   questionEl.textContent = q.question;
 
+  // Esconde a imagem atual e só a revela quando a nova terminar de carregar,
+  // evitando que a foto da pergunta anterior permaneça visível na transição.
+  imageEl.style.opacity = "0";
+  imageEl.onload = () => {
+    imageEl.style.opacity = "1";
+  };
+  imageEl.onerror = () => {
+    imageEl.style.opacity = "1";
+  };
   imageEl.src = q.image;
   imageEl.alt = q.imageAlt;
 

@@ -1,17 +1,16 @@
 .frame {
   width: 100%;
   max-width: 1220px;
-  max-height: 500px;
+  /* Escala com a altura da viewport para caber em telas baixas sem scroll */
+  max-height: min(500px, 45vh);
+  /* Preserva a proporção da imagem (evita achatamento de fotos verticais) */
+  object-fit: contain;
+  object-position: center;
+  /* Transição usada para esconder a imagem antiga enquanto a nova carrega */
+  opacity: 0;
+  transition: opacity 0.3s ease;
   border-radius: 6px;
-  -webkit-box-shadow:
-    inset -1px 3px 8px 5px #1f87ff,
-    2px 5px 5px 0px #0b325e,
-    5px 5px 5px 5px rgba(0, 0, 0, 0);
-  box-shadow:
-    inset -1px 3px 8px 5px #1f87ff,
-    2px 5px 5px 0px #0b325e,
-    5px 5px 5px 5px rgba(0, 0, 0, 0);
-  background: #1c6ea4;
+  background: transparent;
   overflow-y: clip;
 }
 
@@ -266,6 +265,30 @@ section .content {
 #radar-chart-container {
   width: 500px;
   height: 500px;
+}
+
+/* Telas desktop de baixa altura: compacta espaçamentos para tudo caber em 100vh */
+@media screen and (min-width: 769px) and (max-height: 1080px) {
+  .navigator {
+    margin-bottom: 0.5rem;
+  }
+
+  .slide {
+    gap: 0.5rem;
+  }
+
+  .quiz-box {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  #answers {
+    gap: 0.5rem;
+  }
+
+  #question {
+    margin: 0;
+  }
 }
 
 /*Tamanho de tela de Telemóvel*/

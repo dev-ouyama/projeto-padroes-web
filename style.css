@@ -299,7 +299,8 @@ figcaption {
   opacity: 0;
 }
 
-.card:hover p {
+.card:hover p,
+.card:focus-within p {
   opacity: 1;
 }
 
