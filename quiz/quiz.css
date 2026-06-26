@@ -217,16 +217,21 @@ section .content {
 .navigator {
   display: flex;
   gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  justify-content: flex-start;
   max-width: 900px;
   overflow-x: auto;
   overflow-y: hidden;
   margin-bottom: 1rem;
   padding: 0.25rem;
   scrollbar-width: thin; /* Firefox */
+  width: max-content;
   scrollbar-color: #333 transparent;
+}
+
+.navigator-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-item {
