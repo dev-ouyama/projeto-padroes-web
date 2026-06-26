@@ -116,6 +116,7 @@ function loadQuestion() {
     const label = document.createElement("label");
     label.classList.add("answer-option");
 
+    renderNavigator();
     const input = document.createElement("input");
     input.type = "radio";
     input.name = "answer";
@@ -131,7 +132,6 @@ function loadQuestion() {
       // Última pergunta → sem animação lateral
       if (isLastQuestion) {
         loadQuestion();
-        renderNavigator();
         return;
       }
 
@@ -140,7 +140,6 @@ function loadQuestion() {
         currentQuestion++;
 
         loadQuestion();
-        renderNavigator();
       });
     });
 
@@ -209,12 +208,19 @@ popup.addEventListener("click", (e) => {
   }
 });
 
+var is_at_results = false;
+
 // Função para mostrar o popup de confirmação ao voltar das pergunta do Quiz
 function showPopup() {
-  popup.showModal();
+  if(userAnswers.filter(x => x != null).length > 0 && !is_at_results) {
+    popup.showModal();
+  } else {
+    window.location.href = "../index.html";
+  }
 }
 
 function showResult() {
+  is_at_results = true;
   document.getElementById("quiz-container").style.display = "none";
   resultContainer.style.display = "block";
   resultsButton.style.display = "none";
@@ -269,6 +275,13 @@ function renderNavigator() {
     });
 
     navigatorEl.appendChild(item);
+  });
+
+  // Faz o item ativo aparecer na área visível
+  navigatorEl.querySelector(".active")?.scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+    block: "nearest",
   });
 }
 

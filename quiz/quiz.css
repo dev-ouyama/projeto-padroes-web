@@ -218,11 +218,19 @@ section .content {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  overflow-x: auto;
+  overflow-y: hidden;
   margin-bottom: 1rem;
-  white-space: nowrap;
+  padding: 0.25rem;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #333 transparent;
 }
 
 .nav-item {
+  flex: 0 0 auto;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -257,20 +265,26 @@ section .content {
 
 #score {
   font-size: 1.5rem;
+  text-align: center;
   margin-bottom: 0.5rem;
 }
 
 /*RADAR CHART*/
 
 #radar-chart-container {
-  width: 500px;
-  height: 500px;
+  display: flex;
+  justify-content: center;
 }
 
 /* Telas desktop de baixa altura: compacta espaçamentos para tudo caber em 100vh */
 @media screen and (min-width: 769px) and (max-height: 1080px) {
   .navigator {
     margin-bottom: 0.5rem;
+  }
+
+  #radar-chart-container {
+    width: 500px;
+    height: 500px;
   }
 
   .slide {
@@ -344,5 +358,13 @@ section .content {
     border-radius: 6px;
     font-size: 5.2vw;
     font-weight: bold;
+  }
+
+  #result-container {
+    width: 100%;
+  }
+
+  #radar-chart-container {
+    width: 100%;
   }
 }
