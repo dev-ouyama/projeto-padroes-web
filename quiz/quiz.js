@@ -380,14 +380,12 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 // userAnswers[i]o indice que o usuário escolheu
 // questions[i].correct o indice correto
 
-function fillThemeScores(themeScores, correct, tema, nacional) {
-  if (correct) {
+function fillThemeScores(themeScores, tema, nacional) {
     let origem = "nacional";
     if (nacional == false) {
       origem = "internacional";
     }
     themeScores[tema][origem]++;
-  }
 }
 
 //
@@ -410,7 +408,7 @@ function calcThemeScore(questions, userAnswers) {
   questions.forEach((question, index) => {
     // verifica o usuario respondeu corretamente a pergutna, se sim, incrementa o contador de themeScores do tema e se é nacional ou nao
     if (userAnswers[index] === question.correct) {
-      fillThemeScores(themeScores, true, question.tema, question.nacional);
+      fillThemeScores(themeScores, question.tema, question.nacional);
     }
   });
   return themeScores;
