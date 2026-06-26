@@ -1,5 +1,5 @@
 /* importa raiz */
-@import url("../../style.css");
+@import url("../style.css");
 
 /* estilos exclusivos artigos */
 
@@ -49,11 +49,11 @@ article h2 {
   flex-direction: column;
   border-radius: 6px;
   margin: 0 auto;
-  padding: 2rem; 
+  padding: 2rem;
   background: var(--bg-secondary);
-  gap: 1.5rem; 
+  gap: 1.5rem;
   max-width: 100%;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
 
 .recs-card ul {

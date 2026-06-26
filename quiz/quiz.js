@@ -5,7 +5,6 @@ terão 4 pares (cada par tem uma pergunta nacional e uma internacional, as duas 
 Dentre esses 12 pares (4 pares de todos os temas)
 deverá ter um shuffle entre as perguntas na hora de ser enviada para o site*/
 
-
 /*Cada tema é um array de pares de perguntas (nacional e internacional)*/
 const themes = {
   cinema,
@@ -19,8 +18,6 @@ const numThemes = Object.keys(themes).length;
 const numQuestions = numPairs * 2 * numThemes; //numero total de perguntas (2 perguntas por par, 3 temas)
 
 /*---------------------------------------------------------------*/
-
-
 
 /*-------------------MONTAGEM DAS PERGUNTAS----------------------*/
 
@@ -348,9 +345,8 @@ popup.addEventListener("close", () => {
 
 document.getElementById("confirm-exit").addEventListener("click", () => {
   canLeavePage = true;
-  window.location.href = "../../index.html";
+  window.location.href = "../index.html";
 });
-
 
 /*---------------------------------------------------------------------------*/
 
@@ -362,31 +358,31 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 // userAnswers[i]o indice que o usuário escolheu
 // questions[i].correct o indice correto
 
-
-
 function fillThemeScores(themeScores, correct, tema, nacional) {
   if (correct) {
     let origem = "nacional";
-    if (nacional == false) { origem = "internacional"; }
+    if (nacional == false) {
+      origem = "internacional";
+    }
     themeScores[tema][origem]++;
   }
 }
 
-// 
+//
 function calcThemeScore(questions, userAnswers) {
   let themeScores = {
     cinema: {
       nacional: 0,
-      internacional: 0
+      internacional: 0,
     },
     music: {
       nacional: 0,
-      internacional: 0
+      internacional: 0,
     },
     cuisine: {
       nacional: 0,
-      internacional: 0
-    }
+      internacional: 0,
+    },
   };
   // contador de acertos por tema e tipo(nacional e internacional)
   questions.forEach((question, index) => {
@@ -402,28 +398,37 @@ function calcThemeScore(questions, userAnswers) {
 
 // funçao que cria o grafico radial (Radar Chart) usando a biblioteca Chart.js e utilizando os dados calculados por calcThemeScore
 
-const radialChart = document.getElementById('radarChart');
+const radialChart = document.getElementById("radarChart");
 // Renderiza os gráficos radiais com os resultados calculados por calcThemeScore
 
 // renderRadialCharts(calcThemeScore(questions, userAnswers));
 
 function renderRadialCharts(themeScores) {
   new Chart(radialChart, {
-    type: 'radar',
+    type: "radar",
     data: {
-      labels: ['Cinema Nacional', 'Música Nacional', 'Culinária Nacional', 'Cinema Internacional', 'Música Internacional', 'Culinária Internacional'],
-      datasets: [{
-        label: 'Acertos',
-        data: [
-          themeScores.cinema.nacional,
-          themeScores.music.nacional,
-          themeScores.cuisine.nacional,
-          themeScores.cinema.internacional,
-          themeScores.music.internacional,
-          themeScores.cuisine.internacional
-        ],
-        borderWidth: 1
-      }]
+      labels: [
+        "Cinema Nacional",
+        "Música Nacional",
+        "Culinária Nacional",
+        "Cinema Internacional",
+        "Música Internacional",
+        "Culinária Internacional",
+      ],
+      datasets: [
+        {
+          label: "Acertos",
+          data: [
+            themeScores.cinema.nacional,
+            themeScores.music.nacional,
+            themeScores.cuisine.nacional,
+            themeScores.cinema.internacional,
+            themeScores.music.internacional,
+            themeScores.cuisine.internacional,
+          ],
+          borderWidth: 1,
+        },
+      ],
     },
     options: {
       scales: {
@@ -431,14 +436,12 @@ function renderRadialCharts(themeScores) {
           beginAtZero: true,
           max: numPairs,
           ticks: {
-            stepSize: 1  //pra num inteiro
-          }
-        }
-      }
-    }
+            stepSize: 1, //pra num inteiro
+          },
+        },
+      },
+    },
   });
 }
 
 // Radar Chart:https://www.chartjs.org/docs/latest/charts/radar.html
-
-
