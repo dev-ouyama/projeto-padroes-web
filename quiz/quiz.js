@@ -225,8 +225,8 @@ function showResult() {
   resultContainer.style.display = "block";
   resultsButton.style.display = "none";
   scoreEl.textContent = `Você acertou ${score} de ${questions.length}`;
-  // RENDERIZA RADIAL
-  renderRadialCharts(calcThemeScore(questions, userAnswers));
+  // RENDERIZA RADAR CHART
+  renderRadarChart(calcThemeScore(questions, userAnswers));
 }
 
 // Listener em button restart para chamar a funcao restarquiz
@@ -372,7 +372,7 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 
 /*---------------------------------------------------------------------------*/
 
-/*RESULTADO EM FORMA RADIAL - MOSTRANDO A PORCENTAGEM DE ACERTO DO USUÁRIO EM CADA TEMA NO ESPECTRO NACIONAL E NO INTERNCIONAL*/
+/*RESULTADO EM FORMA RADAR - MOSTRANDO A PORCENTAGEM DE ACERTO DO USUÁRIO EM CADA TEMA NO ESPECTRO NACIONAL E NO INTERNCIONAL*/
 
 // Calcula a porcentagem de acerto por tema (cinema, música, culinária) separando nacional e internacional
 
@@ -414,17 +414,17 @@ function calcThemeScore(questions, userAnswers) {
   return themeScores;
 }
 
-/*----------------------------RENDER RADIAL----------------------------------*/
+/*----------------------------RENDER RADAR----------------------------------*/
 
 // funçao que cria o grafico radial (Radar Chart) usando a biblioteca Chart.js e utilizando os dados calculados por calcThemeScore
 
-const radialChart = document.getElementById("radarChart");
+const radarChart = document.getElementById("radarChart");
 // Renderiza os gráficos radiais com os resultados calculados por calcThemeScore
 
-// renderRadialCharts(calcThemeScore(questions, userAnswers));
+// renderRadarChart(calcThemeScore(questions, userAnswers));
 
-function renderRadialCharts(themeScores) {
-  new Chart(radialChart, {
+function renderRadarChart(themeScores) {
+  new Chart(radarChart, {
     type: "radar",
     data: {
       labels: [
