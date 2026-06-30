@@ -48,6 +48,31 @@ section .content {
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+.top-right{
+display: none;
+}
+}
+.border {
+    position: fixed;
+    max-width: 15%;    
+    height: auto;
+    pointer-events: none; /* optional: clicks pass through */
+    z-index: 1;
+}
+.top-left {
+    top: 1%;
+    left: 1%;
+}
+.bottom-left {
+    bottom: 1%;
+    left: 1%;
+}
+.top-right {
+    top: 1%;
+    right: 1%;
+    transform: scale(-1, -1);
+}
 .slide {
   transition:
     transform 0.4s ease,
@@ -239,7 +264,7 @@ section .content {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #ccc;
+  background: #a3accf;
   display: flex;
   align-items: center;
   justify-content: center;
