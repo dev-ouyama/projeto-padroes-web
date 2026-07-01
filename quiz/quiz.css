@@ -385,10 +385,12 @@ section .content {
     bottom: 1rem;
     margin: 0 auto;
     width: 260px;
+    color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     font-size: 5.2vw;
     font-weight: bold;
+    z-index: 999;
   }
 
   #result-container {
