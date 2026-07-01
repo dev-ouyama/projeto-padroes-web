@@ -13,7 +13,7 @@ const themes = {
 };
 
 //constantes globais para o quiz
-const numPairs = 3; // número de pares de perguntas por tema
+const numPairs = 1; // número de pares de perguntas por tema
 const numThemes = Object.keys(themes).length;
 const numQuestions = numPairs * 2 * numThemes; //numero total de perguntas (2 perguntas por par, 3 temas)
 
@@ -117,12 +117,28 @@ function loadQuestion() {
     label.classList.add("answer-option");
 
     renderNavigator();
+
+    if (is_at_results) {
+      label.classList.add("review");
+    }
+    
     const input = document.createElement("input");
     input.type = "radio";
     input.name = "answer";
     input.value = index;
 
+    if (is_at_results && index === q.correct) {
+        label.classList.add("correct");
+    }
+    
+    input.disabled = is_at_results;
+
     input.addEventListener("change", () => {
+      if (is_at_results) {
+        input.checked = (userAnswers[currentQuestion] === index);
+        return;
+      }
+
       const answerIndex = Number(input.value);
 
       userAnswers[currentQuestion] = answerIndex;
@@ -236,6 +252,7 @@ document
   .addEventListener("click", restartQuiz);
 
 function restartQuiz() {
+  is_at_results = false;
   currentQuestion = 0;
   score = 0;
 
@@ -244,6 +261,21 @@ function restartQuiz() {
 
   //cria novas questões:
   questions = createQuestions();
+
+  resultContainer.style.display = "none";
+  document.getElementById("quiz-container").style.display = "block";
+
+  loadQuestion();
+  renderNavigator();
+}
+
+// Listener em button review para chamar a funcao reviewQuiz
+document
+  .getElementById("review-button")
+  .addEventListener("click", reviewQuiz);
+
+function reviewQuiz() {
+  currentQuestion = 0;
 
   resultContainer.style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
@@ -263,12 +295,22 @@ function renderNavigator() {
     item.classList.add("nav-item");
     item.textContent = index + 1;
 
-    if (index === currentQuestion) {
-      item.classList.add("active");
+    if (is_at_results) {
+      if(userAnswers[index] == questions[index].correct) {
+        item.classList.add("correct");
+      }
+      else {
+        item.classList.add("wrong");
+      }
     }
-
-    if (userAnswers[index] !== null) {
-      item.classList.add("answered");
+    else {
+      if (index === currentQuestion) {
+        item.classList.add("active");
+      }
+      
+      if (userAnswers[index] !== null) {
+        item.classList.add("answered");
+      }
     }
 
     item.addEventListener("click", () => {

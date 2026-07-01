@@ -79,6 +79,8 @@ h6 {
   --bg-button: #fefefe;
   --bg-shadow: #2b2929;
   --nav-quiz: #3a5aa0;
+  --correct-answer: #1dc02a;
+  --wrong-answer: #bb0e0e;
 }
 
 /* ===== ESTILOS BASE ===== */

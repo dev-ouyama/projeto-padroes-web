@@ -288,7 +288,22 @@ section .content {
   color: var(--bg-default);
 }
 
-#restart-button {
+.correct {
+  background: var(--correct-answer);
+  color: var(--bg-default);
+}
+
+.wrong {
+  background: var(--wrong-answer);
+  color: var(--bg-default);
+}
+
+.answer-option.review {
+    pointer-events: none;
+    cursor: default;
+}
+
+#style-button {
   display: block;
   margin: 0 auto;
   border-radius: 2rem;
@@ -304,6 +319,13 @@ section .content {
 
 #radar-chart-container {
   display: flex;
+  justify-content: center;
+}
+
+.align-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
   justify-content: center;
 }
 
