@@ -6,7 +6,7 @@
 <p align="center">
   Um WebSite desenvolvido para promover uma reflexão sobre os impactos da globalização digital nos hábitos de consumo cultural por meio de um quiz interativo.
 </p>
-<p>Site: https://projeto-padroes-ewp8o1w09-felipeinfo18s-projects.vercel.app/index.html</p>
+<p>Site: https://projeto-padroes-web-felipeinfo18s-projects.vercel.app</p>
 
 ## Índice
 
