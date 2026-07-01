@@ -314,8 +314,8 @@ section .content {
   }
 
   #radar-chart-container {
-    width: 500px;
-    height: 500px;
+    width: 650px;
+    height: 650px;
   }
 
   .slide {
@@ -373,7 +373,7 @@ section .content {
   }
 
   #answers label span {
-    font-size: clamp(14px, 7vw, 30px);
+    font-size: clamp(14px, 5.5vw, 30px);
     display: -webkit-box;
     -webkit-box-orient: vertical;
   }

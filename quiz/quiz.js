@@ -13,7 +13,7 @@ const themes = {
 };
 
 //constantes globais para o quiz
-const numPairs = 2; // número de pares de perguntas por tema
+const numPairs = 3; // número de pares de perguntas por tema
 const numThemes = Object.keys(themes).length;
 const numQuestions = numPairs * 2 * numThemes; //numero total de perguntas (2 perguntas por par, 3 temas)
 
@@ -212,7 +212,7 @@ var is_at_results = false;
 
 // Função para mostrar o popup de confirmação ao voltar das pergunta do Quiz
 function showPopup() {
-  if(userAnswers.filter(x => x != null).length > 0 && !is_at_results) {
+  if (userAnswers.filter(x => x != null).length > 0 && !is_at_results) {
     popup.showModal();
   } else {
     window.location.href = "../index.html";
@@ -381,11 +381,11 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 // questions[i].correct o indice correto
 
 function fillThemeScores(themeScores, tema, nacional) {
-    let origem = "nacional";
-    if (nacional == false) {
-      origem = "internacional";
-    }
-    themeScores[tema][origem]++;
+  let origem = "nacional";
+  if (nacional == false) {
+    origem = "internacional";
+  }
+  themeScores[tema][origem]++;
 }
 
 //
@@ -428,12 +428,12 @@ function renderRadarChart(themeScores) {
     type: "radar",
     data: {
       labels: [
-        "Cinema Nacional",
-        "Música Nacional",
-        "Culinária Nacional",
-        "Cinema Internacional",
-        "Música Internacional",
-        "Culinária Internacional",
+        "Cinema BR",
+        "Música BR",
+        "Culinária BR",
+        "Cinema Int.",
+        "Música Int.",
+        "Culinária Int.",
       ],
       datasets: [
         {
@@ -456,7 +456,22 @@ function renderRadarChart(themeScores) {
           beginAtZero: true,
           max: numPairs,
           ticks: {
-            stepSize: 1, //pra num inteiro
+            stepSize: 1,
+            backdropColor: "transparent",
+            font: {
+              size: 16,
+              family: "Arial",
+              weight: "bold",
+            },
+          },
+
+          // labels ao redor do radar
+          pointLabels: {
+            font: {
+              size: 16,
+              family: "Arial",
+              weight: "bold",
+            },
           },
         },
       },
