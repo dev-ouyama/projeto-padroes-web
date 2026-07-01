@@ -46,8 +46,34 @@ section .content {
   flex-direction: column;
   overflow: visible;
   position: relative;
+  z-index: 2;
 }
 
+@media screen and (max-width: 768px) {
+  .top-right {
+    display: none;
+  }
+}
+.border {
+  position: fixed;
+  max-width: 20%;
+  height: auto;
+  pointer-events: none; /* optional: clicks pass through */
+  z-index: 1;
+}
+.top-left {
+  top: 1%;
+  left: 1%;
+}
+.bottom-left {
+  bottom: 1%;
+  left: 1%;
+}
+.top-right {
+  top: 1%;
+  right: 1%;
+  transform: scale(-1, -1);
+}
 .slide {
   transition:
     transform 0.4s ease,
@@ -99,7 +125,7 @@ section .content {
   cursor: pointer;
   border: 1px solid var(--text);
   border-radius: 6px;
-  background-color: transparent;
+  background-color: var(--bg-secondary);
   color: var(--text);
 }
 
@@ -131,7 +157,7 @@ section .content {
   /*transform: translateY(-2px);*/
 }
 
-.answer-option input[type="radio"]:checked+span {
+.answer-option input[type="radio"]:checked + span {
   background-color: var(--text);
   color: var(--bg-default);
   border-color: var(--text);
@@ -239,7 +265,7 @@ section .content {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: #ccc;
+  background: #a3accf;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,7 +286,7 @@ section .content {
 .nav-item.answered {
   background: var(--nav-quiz);
   color: var(--bg-default);
-} 
+}
 
 #restart-button {
   display: block;
@@ -288,8 +314,8 @@ section .content {
   }
 
   #radar-chart-container {
-    width: 500px;
-    height: 500px;
+    width: 650px;
+    height: 650px;
   }
 
   .slide {
@@ -347,7 +373,7 @@ section .content {
   }
 
   #answers label span {
-    font-size: clamp(14px, 7vw, 30px);
+    font-size: clamp(14px, 5.5vw, 30px);
     display: -webkit-box;
     -webkit-box-orient: vertical;
   }
@@ -359,10 +385,12 @@ section .content {
     bottom: 1rem;
     margin: 0 auto;
     width: 260px;
+    color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     font-size: 5.2vw;
     font-weight: bold;
+    z-index: 999;
   }
 
   #result-container {

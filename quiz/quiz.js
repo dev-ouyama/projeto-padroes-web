@@ -13,7 +13,7 @@ const themes = {
 };
 
 //constantes globais para o quiz
-const numPairs = 2; // número de pares de perguntas por tema
+const numPairs = 3; // número de pares de perguntas por tema
 const numThemes = Object.keys(themes).length;
 const numQuestions = numPairs * 2 * numThemes; //numero total de perguntas (2 perguntas por par, 3 temas)
 
@@ -226,8 +226,8 @@ function showResult() {
   resultContainer.style.display = "block";
   resultsButton.style.display = "none";
   scoreEl.textContent = `Você acertou ${score} de ${questions.length}`;
-  // RENDERIZA RADIAL
-  renderRadialCharts(calcThemeScore(questions, userAnswers));
+  // RENDERIZA RADAR CHART
+  renderRadarChart(calcThemeScore(questions, userAnswers));
 }
 
 // Listener em button restart para chamar a funcao restarquiz
@@ -373,7 +373,7 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 
 /*---------------------------------------------------------------------------*/
 
-/*RESULTADO EM FORMA RADIAL - MOSTRANDO A PORCENTAGEM DE ACERTO DO USUÁRIO EM CADA TEMA NO ESPECTRO NACIONAL E NO INTERNCIONAL*/
+/*RESULTADO EM FORMA RADAR - MOSTRANDO A PORCENTAGEM DE ACERTO DO USUÁRIO EM CADA TEMA NO ESPECTRO NACIONAL E NO INTERNCIONAL*/
 
 // Calcula a porcentagem de acerto por tema (cinema, música, culinária) separando nacional e internacional
 
@@ -381,14 +381,12 @@ document.getElementById("confirm-exit").addEventListener("click", () => {
 // userAnswers[i]o indice que o usuário escolheu
 // questions[i].correct o indice correto
 
-function fillThemeScores(themeScores, correct, tema, nacional) {
-  if (correct) {
-    let origem = "nacional";
-    if (nacional == false) {
-      origem = "internacional";
-    }
-    themeScores[tema][origem]++;
+function fillThemeScores(themeScores, tema, nacional) {
+  let origem = "nacional";
+  if (nacional == false) {
+    origem = "internacional";
   }
+  themeScores[tema][origem]++;
 }
 
 //
@@ -411,32 +409,32 @@ function calcThemeScore(questions, userAnswers) {
   questions.forEach((question, index) => {
     // verifica o usuario respondeu corretamente a pergutna, se sim, incrementa o contador de themeScores do tema e se é nacional ou nao
     if (userAnswers[index] === question.correct) {
-      fillThemeScores(themeScores, true, question.tema, question.nacional);
+      fillThemeScores(themeScores, question.tema, question.nacional);
     }
   });
   return themeScores;
 }
 
-/*----------------------------RENDER RADIAL----------------------------------*/
+/*----------------------------RENDER RADAR----------------------------------*/
 
 // funçao que cria o grafico radial (Radar Chart) usando a biblioteca Chart.js e utilizando os dados calculados por calcThemeScore
 
-const radialChart = document.getElementById("radarChart");
+const radarChart = document.getElementById("radarChart");
 // Renderiza os gráficos radiais com os resultados calculados por calcThemeScore
 
-// renderRadialCharts(calcThemeScore(questions, userAnswers));
+// renderRadarChart(calcThemeScore(questions, userAnswers));
 
-function renderRadialCharts(themeScores) {
-  new Chart(radialChart, {
+function renderRadarChart(themeScores) {
+  new Chart(radarChart, {
     type: "radar",
     data: {
       labels: [
-        "Cinema Nacional",
-        "Música Nacional",
-        "Culinária Nacional",
-        "Cinema Internacional",
-        "Música Internacional",
-        "Culinária Internacional",
+        "Cinema BR",
+        "Música BR",
+        "Culinária BR",
+        "Cinema Int.",
+        "Música Int.",
+        "Culinária Int.",
       ],
       datasets: [
         {
@@ -459,7 +457,22 @@ function renderRadialCharts(themeScores) {
           beginAtZero: true,
           max: numPairs,
           ticks: {
-            stepSize: 1, //pra num inteiro
+            stepSize: 1,
+            backdropColor: "transparent",
+            font: {
+              size: 16,
+              family: "Arial",
+              weight: "bold",
+            },
+          },
+
+          // labels ao redor do radar
+          pointLabels: {
+            font: {
+              size: 16,
+              family: "Arial",
+              weight: "bold",
+            },
           },
         },
       },

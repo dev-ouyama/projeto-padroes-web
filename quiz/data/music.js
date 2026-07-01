@@ -4,7 +4,7 @@ const music = [
       question: "Qual é essa cantora brasileira?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Elza_Soares.jpg",
-      imageAlt: "Elza Soares em foto em preto e branco.",
+      imageAlt: "Cantora brasileira reconhecida pela voz marcante e pela influência no samba e na música popular brasileira.",
       answers: [
         "Alcione",
         "Elza Soares",
@@ -16,9 +16,10 @@ const music = [
       nacional: true,
     },
     internacional: {
+      question: "Que cantora de jazz é essa?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Nina_Simone_-1969.jpg",
-      imageAlt: "Nina Simone em 1969.",
+      imageAlt: "Pianista e cantora americana que se destacou no jazz e participou ativamente do movimento pelos direitos civis.",
       answers: [
         "Billie Holiday",
         "Ella Fitzgerald",
@@ -35,7 +36,7 @@ const music = [
       question: "Qual é esse músico brasileiro, rei do baião?",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Luiz_Gonzaga_%281957%29.jpg/960px-Luiz_Gonzaga_%281957%29.jpg",
-      imageAlt: "Luiz Gonzaga com sanfona em 1957.",
+      imageAlt: "Músico pernambucano responsável por popularizar ritmos nordestinos em todo o Brasil.",
       answers: [
         "Jackson do Pandeiro",
         "Dominguinhos",
@@ -50,7 +51,7 @@ const music = [
       question: "Qual é esse músico jamaicano?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Bob_Marley_1976_press_photo.jpg",
-      imageAlt: "Bob Marley em foto promocional de 1976.",
+      imageAlt: "Cantor jamaicano que se tornou o principal nome mundial do reggae.",
       answers: ["Peter Tosh", "Bunny Wailer", "Jimmy Cliff", "Bob Marley"],
       correct: 3,
       tema: "music",
@@ -62,7 +63,7 @@ const music = [
       question: "Qual é esse cantor brasileiro, pioneiro do soul nacional?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/TIM_MAIA_SONIA_D%27ALMEIDA_1987.jpg",
-      imageAlt: "Tim Maia em foto de 1987.",
+      imageAlt: "Cantor e compositor brasileiro conhecido por introduzir o soul e o funk na música popular do país.",
       answers: ["Jorge Ben Jor", "Erasmo Carlos", "Tim Maia", "Gilberto Gil"],
       correct: 2,
       tema: "music",
@@ -72,7 +73,7 @@ const music = [
       question: "Qual é esse cantor americano, pai do funk?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/James_Brown_Live_Hamburg_1973_1702730029.jpg",
-      imageAlt: "James Brown no palco em Hamburgo, 1973.",
+      imageAlt: "Cantor americano frequentemente considerado uma das figuras mais importantes da história do funk.",
       answers: ["Marvin Gaye", "James Brown", "Otis Redding", "Wilson Pickett"],
       correct: 1,
       tema: "music",
@@ -85,7 +86,7 @@ const music = [
       image:
         "https://upload.wikimedia.org/wikipedia/commons/b/b6/HermetoBsAs78-Arturo-Encina.jpg",
       imageAlt:
-        "Homem branco com cabelos e barba longos e brancos tocando flauta.",
+        "Instrumentista e compositor brasileiro conhecido pelas experimentações musicais.",
       answers: ["Egberto Gismonti", "Hermeto Pascoal", "Paulo Moura", "Sivuca"],
       correct: 1,
       tema: "music",
@@ -95,7 +96,7 @@ const music = [
       question: "Qual é esse trompetista americano, ícone do jazz?",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/9/93/Miles_Davis_%28Antibes_Juan-les-Pins_1963%29.jpg",
-      imageAlt: "Homem negro de perfil tocando trompete com olhos fechados.",
+      imageAlt: "Trompetista americano que influenciou profundamente a evolução do jazz moderno.",
       answers: [
         "Chet Baker",
         "Dizzy Gillespie",
@@ -112,7 +113,7 @@ const music = [
       question: "Qual é esse cantor baiano, ícone da Tropicália?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Caetano_Veloso_(cropped).jpg",
-      imageAlt: "Caetano Veloso em entrevista em São Paulo, 2022.",
+      imageAlt: "Cantor e compositor baiano associado ao movimento tropicalista e à renovação da música brasileira.",
       answers: [
         "Gilberto Gil",
         "Caetano Veloso",
@@ -127,7 +128,7 @@ const music = [
       question: "Qual é esse cantor britânico, ícone do glam rock?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/David_Bowie_in_Lavapies_-_Madrid_01.jpg",
-      imageAlt: "David Bowie em foto de rua em Madri.",
+      imageAlt: "Artista britânico conhecido pelas constantes reinvenções visuais e musicais ao longo da carreira.",
       answers: ["Elton John", "Marc Bolan", "David Bowie", "Freddie Mercury"],
       correct: 2,
       tema: "music",
@@ -139,7 +140,7 @@ const music = [
       question: "Qual é essa cantora brasileira, a Pimentinha?",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Elis_Regina_1972.tif/lossless-page1-960px-Elis_Regina_1972.tif.png",
-      imageAlt: "Mulher sorrindo segurando em um microfone.",
+      imageAlt: "Cantora brasileira considerada uma das maiores intérpretes da música popular do país.",
       answers: ["Nana Caymmi", "Gal Costa", "Maria Bethânia", "Elis Regina"],
       correct: 3,
       tema: "music",
@@ -162,7 +163,7 @@ const music = [
       question: "Qual é esse cantor e compositor brasileiro?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Chico_Buarque_in_2023.jpg",
-      imageAlt: "Chico Buarque em 2023.",
+      imageAlt: "Compositor e escritor brasileiro reconhecido pelas letras sofisticadas e pelo engajamento político e social.",
       answers: ["Milton Nascimento", "Ivan Lins", "Chico Buarque", "Djavan"],
       correct: 2,
       tema: "music",
@@ -170,9 +171,8 @@ const music = [
     },
     internacional: {
       question: "Qual é esse cantor e poeta canadense?",
-      image:
-        "https://commons.wikimedia.org/wiki/Special:FilePath/Leonard_Cohen_1_2013.jpg",
-      imageAlt: "Leonard Cohen em 2013.",
+      image:"https://19930cd4.delivery.rocketcdn.me/wp-content/uploads/2021/11/articles-3qs2d3xVbZp8WoP.jpg",
+      imageAlt: "Poeta, escritor e cantor canadense conhecido pelas letras introspectivas e melancólicas",
       answers: ["Bob Dylan", "Leonard Cohen", "Paul Simon", "Nick Cave"],
       correct: 1,
       tema: "music",
@@ -184,7 +184,7 @@ const music = [
       question: "Qual é esse músico baiano, ex-ministro da cultura?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Gilberto_Gil_(5142820705)_(cropped).jpg",
-      imageAlt: "Gilberto Gil em foto de palco.",
+      imageAlt: "Cantor, compositor e ex-ministro brasileiro com forte participação na música e na cultura do país.",
       answers: ["Caetano Veloso", "Carlinhos Brown", "Gilberto Gil", "Djavan"],
       correct: 2,
       tema: "music",
@@ -195,7 +195,7 @@ const music = [
         "Qual é esse músico americano, ícone do funk e pop dos anos 80?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Prince_at_Coachella_(cropped).jpg",
-      imageAlt: "Prince no Coachella.",
+      imageAlt: "Músico americano conhecido pela versatilidade instrumental e pela mistura de funk, rock e pop.",
       answers: ["Michael Jackson", "Prince", "Rick James", "Morris Day"],
       correct: 1,
       tema: "music",
@@ -207,7 +207,7 @@ const music = [
       question: "Qual é esse cantor brasileiro, o Rei?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Roberto_Carlos_Pr%C3%AAmio_Amazonas_2023.jpg",
-      imageAlt: "Roberto Carlos em 2023.",
+      imageAlt: "Cantor brasileiro com uma das carreiras mais longas e bem-sucedidas da música nacional.",
       answers: [
         "Erasmo Carlos",
         "Roberto Carlos",
@@ -256,7 +256,7 @@ const music = [
       question: "Qual é essa cantora americana do pop e R&B?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Beyonc%C3%A9_Knowles_GMA_Run_the_World_cropped.jpg",
-      imageAlt: "Beyoncé em show.",
+      imageAlt: "Cantora americana reconhecida pela carreira solo de sucesso e pelas performances de grande escala.",
       answers: ["Rihanna", "Beyoncé", "Alicia Keys", "Jennifer Hudson"],
       correct: 1,
       tema: "music",
@@ -268,7 +268,7 @@ const music = [
       question: "Qual é essa cantora carioca de funk e pop?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Anitta_for_Attractive_Mindset_podcast_02.jpg",
-      imageAlt: "Anitta em foto de podcast.",
+      imageAlt: "Cantora brasileira responsável pela internacionalização recente do funk e do pop nacional.",
       answers: ["Ludmilla", "MC Kevinho", "Lexa", "Anitta"],
       correct: 3,
       tema: "music",
@@ -278,7 +278,7 @@ const music = [
       question: "Qual é esse cantor americano, o Rei do Pop?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Michael_Jackson_in_1988.jpg",
-      imageAlt: "Michael Jackson em 1988.",
+      imageAlt: "Artista americano conhecido pelo impacto mundial na música pop, na dança e nos videoclipes.",
       answers: ["Prince", "Usher", "Michael Jackson", "James Brown"],
       correct: 2,
       tema: "music",
@@ -290,7 +290,7 @@ const music = [
       question: "Qual é esse cantor e ator carioca?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Seu_Jorge.jpg",
-      imageAlt: "Seu Jorge em foto de divulgação.",
+      imageAlt: "Cantor e ator brasileiro conhecido pelo trabalho na música popular e no cinema.",
       answers: ["Marcelo D2", "Seu Jorge", "Criolo", "BNegão"],
       correct: 1,
       tema: "music",
@@ -300,7 +300,7 @@ const music = [
       question: "Qual é esse cantor americano, o Homem de Preto?",
       image:
         "https://commons.wikimedia.org/wiki/Special:FilePath/Johnny_Cash_1977.jpg",
-      imageAlt: "Johnny Cash em 1977.",
+      imageAlt: "Cantor americano cuja carreira se tornou uma referência da música country e folk.",
       answers: [
         "Waylon Jennings",
         "Kris Kristofferson",
