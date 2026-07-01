@@ -171,9 +171,8 @@ const music = [
     },
     internacional: {
       question: "Qual é esse cantor e poeta canadense?",
-      image:
-        "Poeta, escritor e cantor canadense conhecido pelas letras introspectivas e melancólicas.",
-      imageAlt: "Leonard Cohen em 2013.",
+      image:"https://19930cd4.delivery.rocketcdn.me/wp-content/uploads/2021/11/articles-3qs2d3xVbZp8WoP.jpg",
+      imageAlt: "Poeta, escritor e cantor canadense conhecido pelas letras introspectivas e melancólicas",
       answers: ["Bob Dylan", "Leonard Cohen", "Paul Simon", "Nick Cave"],
       correct: 1,
       tema: "music",
