@@ -241,6 +241,7 @@ function showResult() {
   document.getElementById("quiz-container").style.display = "none";
   resultContainer.style.display = "block";
   resultsButton.style.display = "none";
+  navigatorEl.style.display = "none";
   scoreEl.textContent = `Você acertou ${score} de ${questions.length}`;
   // RENDERIZA RADAR CHART
   renderRadarChart(calcThemeScore(questions, userAnswers));
@@ -262,6 +263,7 @@ function restartQuiz() {
   //cria novas questões:
   questions = createQuestions();
 
+  navigatorEl.style.display = "flex";
   resultContainer.style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
 
@@ -277,6 +279,7 @@ document
 function reviewQuiz() {
   currentQuestion = 0;
 
+  navigatorEl.style.display = "flex";
   resultContainer.style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
 
@@ -354,7 +357,7 @@ resultsButton.addEventListener("click", () => {
   const unanswered = userAnswers
     .map((answer, index) => (answer === null ? index + 1 : null))
     .filter((item) => item !== null);
-  console.log(unanswered);
+    
   if (unanswered.length > 0) {
     alert(
       `Você ainda precisa responder as perguntas: ${unanswered.join(", ")}`,
