@@ -1,4 +1,5 @@
 <p align="center">
+  <img alt="rifa" src="/assets/icons/project-icon.png" width="100px" />
   <h1 align="center">Impacto da Globalização Digital</h1>
 </p>
 
