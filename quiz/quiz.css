@@ -56,7 +56,7 @@ section .content {
 }
 .border {
   position: fixed;
-  max-width: 40%;
+  max-width: 20%;
   height: auto;
   pointer-events: none; /* optional: clicks pass through */
   z-index: 1;

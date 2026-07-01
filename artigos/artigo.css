@@ -4,9 +4,9 @@
 /* estilos exclusivos artigos */
 
 /* ajuste no main */
-article main {
+main article {
   max-width: 50%;
-  margin: 0 auto;
+  margin: 2% auto;
 }
 
 article {
@@ -97,8 +97,25 @@ article h2 {
 
 /* mobile */
 @media (max-width: 767px) {
-  article main {
+  main article {
     max-width: 100%;
+    width: 100%;
+    padding: 5%;
+  }
+
+  article h1 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  article h2 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    margin: 16px 0;
+  }
+
+  article p,
+  article li {
+    font-size: 0.98rem;
+    line-height: 1.7;
   }
 
   .recs-card {
