@@ -21,7 +21,7 @@ const cinema = [
       question: "Que personagem de filme é esse?",
       image:
         "https://upload.wikimedia.org/wikipedia/pt/thumb/2/21/Web_of_Spider-Man_Vol_1_129-1.png/250px-Web_of_Spider-Man_Vol_1_129-1.png",
-      imageAlt: "",
+      imageAlt: "Homem com fantasia vermelha e azul com teia de aranha no peito.",
       answers: [
         "Homem Aranha",
         "Graça Aranha",
@@ -39,7 +39,7 @@ const cinema = [
       question: "Qual filme é esse?",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOecpBVeL8FSXW8UWzPvIO88RfS3FQGpuUlfNK-csdxqBcq8kzqRsW7a8&s=10",
-      imageAlt: "",
+      imageAlt: "Garoto com cabelo raspado em frente a um grupo de bandidos armados ao fundo.",
       answers: [
         "Carandiru: O Filme",
         "Tropa de Elite",
@@ -135,8 +135,8 @@ const cinema = [
     nacional: {
       /* Bacurau */
       question: "Qual filme brasileiro é esse?",
-      image: "../../../assets/imgs/cinema/bacurau.jpg",
-      imageAlt: "",
+      image: "https://www.brasildefato.com.br/wp-content/uploads/2024/09/image_processing20210311-29999-15vm7ea.jpeg",
+      imageAlt: "Grupo de pessoas armadas apontando para uma cova no chão. Pássaros negros voando ao fundo.",
       answers: [
         "Aquarius",
         "Bacurau",
@@ -163,10 +163,10 @@ const cinema = [
     nacional: {
       /* Carandiru */
       question: "Qual filme brasileiro é esse?",
-      image: "../../../assets/imgs/cinema/carandiru.jpg",
+      image: "https://static.mostra.org/_img/_jornal/2240_t.jpg",
       imageAlt:
-        "Vários guardas protegendo a saída de um presídio com grades e portão.",
-      answers: ["Carandiru", "Tropa de Elite 2", "O Mecanismo", "Pixote"],
+        "Médico passando em um corredor de um complexo penitenciário com presos ao fundo.",
+      answers: ["Carandiru", "Tropa de Elite 2", "Memórias do Cárcere", "Pixote"],
       correct: 0,
       tema: "cinema",
       nacional: true,
@@ -242,24 +242,24 @@ const cinema = [
     nacional: {
       /* Eu Sei Que Vou Te Amar */
       question:
-        "Qual ator é o protagonista desse clássico do cinema brasileiro?",
+        "Qual atriz é protagonista de: Eu sei que vou te amar?",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Fernanda_Montenegro2019.jpg/500px-Fernanda_Montenegro2019.jpg",
+        "https://cinemateca.org.br/wp-content/uploads/2025/01/cbs_id_eu_sei_que_vou_te_amar.jpg",
       imageAlt: "Atriz brasileira consagrada em cena dramática",
       answers: [
         "Glória Pires",
         "Fernanda Montenegro",
         "Sônia Braga",
-        "Regina Casé",
+        "Fernanda Torres",
       ],
-      correct: 1,
+      correct: 3, 
       tema: "cinema",
       nacional: true,
     },
     internacional: {
       /* De Volta Para o Futuro */
       question: "Qual filme é esse?",
-      image: "../../../assets/imgs/cinema/de-volta-para-o-futuro.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSysYUdJ1b5p4jRiUfBxcy9IAaDDSmPhBFuE_17Vey5TG13xk7yals_bTGK&s=10",
       imageAlt: "Carro esportivo prata com chamas saindo dos pneus",
       answers: [
         "De Volta Para o Futuro",
@@ -276,8 +276,8 @@ const cinema = [
     nacional: {
       /* Tropa de Elite 2 */
       question: "Qual filme brasileiro é esse?",
-      image: "../../../assets/imgs/cinema/tropa-de-elite-2.jpg",
-      imageAlt: "Coronel fardado em coletiva de imprensa com microfones",
+      image: "https://i.ytimg.com/vi/126YLdFgKJo/maxresdefault.jpg",
+      imageAlt: "Coronel depondo em frente a uma mesa com microfone.",
       answers: [
         "Tropa de Elite",
         "Tropa de Elite 2",
@@ -291,7 +291,7 @@ const cinema = [
     internacional: {
       /* Senhor dos Anéis */
       question: "Qual filme é esse?",
-      image: "../../../assets/imgs/cinema/senhor-dos-aneis.jpg",
+      image: "https://www.intofilm.org/intofilm-production/scaledcropped/870x489https%3A/s3-eu-west-1.amazonaws.com/images.cdn.filmclub.org/film__3930-the-lord-of-the-rings-the-fellowship-of-the-ring--hi_res-a207bd11.jpg/film__3930-the-lord-of-the-rings-the-fellowship-of-the-ring--hi_res-a207bd11.jpg",
       imageAlt:
         "Grupo de personagens de fantasia caminhando por paisagem montanhosa",
       answers: ["Hobbit", "Senhor dos Anéis", "Narnia", "História sem Fim"],
@@ -304,8 +304,8 @@ const cinema = [
     nacional: {
       /* Pixote */
       question: "Qual filme brasileiro é esse?",
-      image: "../../../assets/imgs/cinema/pixote.jpg",
-      imageAlt: "Criança de rua sozinha em calçada de cidade grande",
+      image: "https://jornal.usp.br/wp-content/uploads/20170307_00_pixote.jpg",
+      imageAlt: "Criança de touca em ambiente penitenciário com outros jovens ao fundo.",
       answers: [
         "Moleque Tião",
         "Pixote",
@@ -319,8 +319,8 @@ const cinema = [
     internacional: {
       /* Pulp Fiction */
       question: "Qual filme é esse?",
-      image: "../../../assets/imgs/cinema/pulp-fiction.jpg",
-      imageAlt: "Dois homens de terno preto e gravata fina conversando",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcaM1cYOdfu9vegVLapYhoAcOikekc_ZZ7nvFFZnm7da6RHkuvVzu-_aE&s=10",
+      imageAlt: "Dois homens de terno preto e gravata fina apontando uma arma para frente.",
       answers: [
         "Reservoir Dogs",
         "Pulp Fiction",
@@ -336,7 +336,7 @@ const cinema = [
     nacional: {
       /* A Vida Invisível */
       question: "Qual filme brasileiro é esse?",
-      image: "../../../assets/imgs/cinema/a-vida-invisivel.jpg",
+      image: "https://ims.com.br/wp-content/uploads/2019/11/A-vida-invis%C3%ADvel03_1920x1080.jpg",
       imageAlt: "Duas irmãs jovens no Rio de Janeiro dos anos 1950",
       answers: [
         "Flores Raras",
@@ -351,7 +351,7 @@ const cinema = [
     internacional: {
       /* La La Land */
       question: "Qual filme é esse?",
-      image: "../../../assets/imgs/cinema/la-la-land.jpg",
+      image: "https://occ-0-8407-2218.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABZsasO09j8Jm38swALhu_iu7yvRYG9yuF3e-k5rpg7KSu5ueUD-qAfH5nCnKvStnuFQx-F0OQGqUzxEkcG2PCf9oP5XFCb7FJQxi.jpg?r=ada",
       imageAlt: "Casal dançando sob estrelas em mirante de Los Angeles",
       answers: ["La La Land", "Moulin Rouge", "Chicago", "Mamma Mia"],
       correct: 0,
