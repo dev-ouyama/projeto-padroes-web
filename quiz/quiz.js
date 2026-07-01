@@ -212,6 +212,7 @@ var is_at_results = false;
 
 // Função para mostrar o popup de confirmação ao voltar das pergunta do Quiz
 function showPopup() {
+  // Apenas abre a modal de confirmação se alguma das perguntas já tiverem sido respondidas e se não estiver na página de resultados
   if(userAnswers.filter(x => x != null).length > 0 && !is_at_results) {
     popup.showModal();
   } else {
