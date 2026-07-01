@@ -13,7 +13,7 @@ const themes = {
 };
 
 //constantes globais para o quiz
-const numPairs = 1; // número de pares de perguntas por tema
+const numPairs = 3; // número de pares de perguntas por tema
 const numThemes = Object.keys(themes).length;
 const numQuestions = numPairs * 2 * numThemes; //numero total de perguntas (2 perguntas por par, 3 temas)
 
